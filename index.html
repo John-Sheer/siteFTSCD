@@ -11,72 +11,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
-<body>
-  
+<body>  
   <!-- Section Hero -->
   <section id="accueil" class="hero" style="background-image: url('media/images/fond.png'); background-size: cover; background-position: center;">
     <div class="hero-content">
       <img src="media/images/logo2.png" class="logo" alt="Logo Forum">
       <h1 class="large-text"><span>FTSCD</span></h1>
-      <p><h2>Togolais de la Société Civile pour le Développement</h2></p>
+      <p><h2>Forum Togolais de la Société Civile pour le Développement</h2></p>
     </div>
   </section>
 
-   <!-- Conteneur pour la barre de navigation -->
-   <div id="navbar"></div>
    <!--- bouton traduction--->
    <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div>
   
-  <!-- Barre de navigation -->
-  <header class="navbar">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
-        <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
-        <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
-        <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
-        <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a>
-          <ul class="submenu">
-            <li><a href="images.html">Images</a></li>
-            <li><a href="videos.html">Vidéos</a></li>
-            <li><a href="coupuresPresse.html">Coupures de presse</a></li>
-            <li><a href="articlesPresse.html">Articles de presse</a></li>
-          </ul>
-        </li>
-        <li><a href="contact.html" class="btn-login">CONTACT</a></li>
-        <li id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Google translate -->
-  <div id="google_translate_element"></div>
-
-  <!-- Contenu de la page -->
+   <!-- Barre de navigation -->
+<header class="navbar">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
+                <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
+                <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
+                <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
+          <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a>
+                    <ul class="submenu">
+                        <li><a href="images.html">Images</a></li>
+                        <li><a href="videos.html">Vidéos</a></li>
+                        <li><a href="coupuresPresse.html">Coupures de presse</a></li>
+                        <li><a href="articlesPresse.html">Articles de presse</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="btn-login">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+  <!-- Inclusion de la barre de navigation -->
+    <!-- contenu de la page -->
   <div class="container">
     <section id="nos-activites" class="section">
-      <h2><strong>PRESENTATION DU FORUM</strong></h2>
-      <p>En tant qu’acteur clé de la société civile togolaise, le Forum Togolais de la Société Civile pour le Développement (FTSCD) a déployé, tout au long de l’année 2024, un ensemble d’actions stratégiques visant à renforcer l’engagement citoyen et la gouvernance participative. Ses interventions ont couvert un large spectre, allant de l’organisation de conférences de presse et la commémoration de journées thématiques, à la tenue et à la participation à des ateliers et séminaires de formation. Le Forum a également joué un rôle essentiel dans l’animation d’émissions et de débats radiophoniques, tout en assurant la coordination de réunions au sein de son réseau. Soucieux de consolider son impact et de favoriser des partenariats durables, le FTSCD a multiplié les échanges avec les Partenaires Techniques et Financiers (PTF), renforçant ainsi les synergies pour une action collective efficace et pérenne.</p>
+      <div class="box">
+        <div class="text-box">
+          <h2><strong>PRESENTATION DU FORUM</strong></h2>
+          <p>En tant qu’acteur clé de la société civile togolaise, le Forum Togolais de la Société Civile pour le Développement (FTSCD) a déployé, tout au long de l’année 2024, un ensemble d’actions stratégiques visant à renforcer l’engagement citoyen et la gouvernance participative. Ses interventions ont couvert un large spectre, allant de l’organisation de conférences de presse et la commémoration de journées thématiques, à la tenue et à la participation à des ateliers et séminaires de formation. Le Forum a également joué un rôle essentiel dans l’animation d’émissions et de débats radiophoniques, tout en assurant la coordination de réunions au sein de son réseau. Soucieux de consolider son impact et de favoriser des partenariats durables, le FTSCD a multiplié les échanges avec les Partenaires Techniques et Financiers (PTF), renforçant ainsi les synergies pour une action collective efficace et pérenne.</p>
+        </div>
+      </div>
 
-      <h3><strong>Actions et domaines d'intervention</strong></h3>
-      <p>Le Forum Togolais de la Société Civile pour le Développement (FTSCD) intervient dans plusieurs domaines stratégiques afin de promouvoir le développement durable et le renforcement de la gouvernance. Ses principales actions couvrent les aspects suivants :</p>
-      <ul>
-        <li>Sensibilisation et formation</li>
-        <li>Gouvernance et transparence</li>
-        <li>Droits de l’Homme et démocratie</li>
-        <li>Paix et cohésion sociale</li>
-        <li>Décentralisation et développement local</li>
-        <li>Environnement et développement durable</li>
-        <li>Plaidoyer et partenariats</li>
-      </ul>
-
-      <p>
-        À travers ces actions, le FTSCD joue un rôle central dans le développement social et économique du Togo, en renforçant la participation citoyenne et en œuvrant pour une gouvernance plus transparente et inclusive.
-      </p>
+      <div class="box">
+        <div class="text-box">
+          <h3><strong>Actions et domaines d'intervention</strong></h3>
+           <p>Le Forum Togolais de la Société Civile pour le Développement (FTSCD) intervient dans plusieurs domaines stratégiques afin de promouvoir le développement durable et le renforcement de la gouvernance. Ses principales actions couvrent les aspects suivants :</p>
+          <ul>
+            <li>Sensibilisation et formation</li>
+            <li>Gouvernance et transparence</li>
+            <li>Droits de l’Homme et démocratie</li>
+            <li>Paix et cohésion sociale</li>
+            <li>Décentralisation et développement local</li>
+            <li>Environnement et développement durable</li>
+            <li>Plaidoyer et partenariats</li>
+          </ul>  
+          <p>
+            À travers ces actions, le FTSCD joue un rôle central dans le développement social et économique du Togo, en renforçant la participation citoyenne et en œuvrant pour une gouvernance plus transparente et inclusive.
+          </p>
+        </div>
+      </div>
     </section>
     <br>
 
@@ -95,10 +97,33 @@
 
   <footer>
     <p>&copy; 2025 FTSCD | Tous droits réservés.</p>
-    <p>Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab,%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank">SheerLab</a></p>
-  </footer>
+    <a href="#" id="openModal">Sheerslab</a>
 
-  <!-- Script pour la barre de navigation -->
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title">SheersLab</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <p>Contactez SheersLab sur :</p>
+        <p><strong>Téléphone :</strong> +228 91983377 / 98983377</p>
+        <p><strong>Email :</strong> contact@sheerslab.com</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+      </div>
+    </div>
+      </footer>
+
+  <!-- Inclusion de javascript -->
+  <script src="assets/js/script.js"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

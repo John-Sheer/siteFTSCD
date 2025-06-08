@@ -15,22 +15,45 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
 
+         <!-- Barre de navigation -->
+   <header class="navbar">
+       <nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
+                <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
+                <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
+                <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
+                <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a> 
+
+                    <ul class="submenu">
+                        <li><a href="images.html">Images</a></li>
+                        <   li><a href="videos.html">Vidéos</a></li>
+                        <li><a href="coupuresPresse.html">Coupures de presse</a></li>
+                        <li><a href="articlesPresse.html">Articles de presse</a></li>
+                    </ul>
+                <li><a href="contact.html" class="btn-login">CONTACT</a></li>
+            </ul>
+       </nav>
+    </header>
 
 <body>
-    <!-- Conteneur pour la barre de navigation -->
-    <div id="navbar-container"></div>
-    <!--- bouton traduction--->
-    <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div>
+   <!-- Conteneur pour la barre de navigation
+   <div id="navbar-container"></div> -->
+    
+    <!--bouton traduction -->
+    <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div
     
   <div class="container">
-  <section id="rapports" class="section">
-    <h2>RAPPORT D'ACTIVITES</h2>
+    <section id="rapportActivites" class="section">
+      <div class="box">
+          <div class="text-box">
+          <h2>RAPPORTS D'ACTIVITES</h2><br>
     <p>Le Forum Togolais de la Société Civile pour le Développement (FTSCD) met à votre disposition ses rapports d'activités annuels. Ces documents détaillent nos initiatives, nos réalisations et les impacts de nos actions dans divers domaines.</p>
      <br>
 
     <h1>Rapport d'Activités 2023</h1>
     <hr>
-    <a href="assets/RAPPORT_2023_FTSCD.pdf" class="btn-download" download>Télécharger en pdf.</a>
+    <a href="media/pdf/RAPPORT_2023_FTSCD.pdf" class="btn-download" target="_blank">Télécharger en PDF.</a>
     <p>Le <strong>FTSCD</strong> (Forum Togolais pour la Société Civile et le Développement), créé en 2003, a pour mission de promouvoir le développement social, économique et culturel au Togo. En 2022, plusieurs événements clés ont marqué son engagement, notamment des célébrations pour la <strong>
       Journée internationale des pauvres</strong> et la <strong>Journée mondiale de lutte contre la corruption</strong>,
        visant à sensibiliser la population aux enjeux cruciaux de la pauvreté et de la corruption.</p>
@@ -51,7 +74,7 @@
     <br>
     <h1>Rapport d'Activités 2022</h1> 
     <hr>  
-    <a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>Télécharger en pdf.</a>
+    <a href="media/pdf/RAPPORT_2022_FTSCD.pdf"  target="_blank" class="btn-download" download>Télécharger en pdf.</a>
     <p>En 2022, le FTSCD a organisé plusieurs événements marquants, incluant :</p>
     <ul>
         <li>Transmission du rapport de l'atelier de plaidoyer sur la lutte contre la corruption aux institutions étatiques.</li>
@@ -80,12 +103,12 @@
 
     <h1>Autres Rapports d'Ativités</h1>
     <hr>
-    <p><strong>Rapport d'Activité 2021:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
-    <p><strong>Rapport d'Activité 2020:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
-    <p><strong>Rapport d'Activité 2019:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
-    <p><strong>Rapport d'Activité 2018:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
-    <p><strong>Rapport d'Activité 2017:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
-    <p><strong>Rapport d'Activité 2016:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2021:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2020:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2019:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2018:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2017:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+       <p><strong>Rapport d'Activité 2016:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
     
   </section>
 
@@ -96,6 +119,7 @@
     <p>Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab,%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank">Sheerslab</a></p>
   </footer>
 
-  <script src="script.js"></script>
-</body>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/main.js"></script>
+  </body
 </html>

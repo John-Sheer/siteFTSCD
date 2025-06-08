@@ -14,10 +14,30 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
+
+ <!-- Barre de navigation -->
+<header class="navbar">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
+                <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
+                <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
+                <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
+          <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a>
+                    <ul class="submenu">
+                        <li><a href="images.html">Images</a></li>
+                        <li><a href="videos.html">Vidéos</a></li>
+                        <li><a href="coupuresPresse.html">Coupures de presse</a></li>
+                        <li><a href="articlesPresse.html">Articles de presse</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="btn-login">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
 <body>
-    <!-- Conteneur pour la barre de navigation -->
-  <div id="navbar-container"></div>
-    <!--- bouton traduction--->
+    <!-- bouton traduction -->
   <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div>
     
     <div class="container">
@@ -51,6 +71,7 @@
     <p>Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab,%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank">Sheerslab</a></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

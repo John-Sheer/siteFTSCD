@@ -6,15 +6,16 @@ body {
     margin: 50px 50px;
     top: 0 !important; 
     position: relative !important;
-    font-size: 16px; /* Taille de police par défaut */
+    font-size: 16px; 
     line-height: 1.6;     
     background-color: #f4f4f9;
+    z-index: auto !important; /* Correction : ne pas mettre de z-index sur body */
 }
 
 hr {
     border: 0;
     height: 1px;
-    background: #3223b6;
+    background: #125712;
     margin-left:0;
     margin-right:100px;
 }
@@ -24,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul, li, a, button, input, textarea {
-    font-size: 16px; /* Taille de police uniforme */
+    font-size: 16px; 
 }
 
 a {
@@ -37,35 +38,125 @@ a:hover {
     color: #0b6e10;
 }
 
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #108116;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 /* ----- Conteneur principal ----- */
 .container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 50px 30px;
     line-height: 1.6;
-    background-color: #b8e7cc;
     border-radius: 10px;
-    border-top: 2px solid #5a49f3;
+    border-top: 4px solid #369636;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-.section h2 {
+/* ----- Section Hero ----- */
+.hero {
+    background-image: url('media/images/fond.png');
+    background-size: cover;
+    background-position: center;
     text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3em;
     margin-bottom: 20px;
-    color: #333;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #2b5237;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+.large-text {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #064486;
+    text-shadow: 2px 2px 8px rgb(245, 252, 248);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0f6d2e;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.large-text {
+    font-size: 8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* ----- Navbar ----- */
 .navbar {
     padding: 10px 20px;
     width: 60%;
-    margin: auto;
-    z-index: 1000;
+    margin: auto;    z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    position: relative;
     background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    position: sticky;
+    top: 0;
+    transform: translateY(-10px);
+    clip-path: polygon(0 0, 100% 0, 99.5% 100%, 0.5% 100%);
+    z-index: 1000;
 }
 
 .nav-list {
@@ -115,27 +206,29 @@ a:hover {
 }
 
 /* Style du sous-menu */
+.dropdown {
+    position: relative; /* Ajouté pour le contexte de positionnement */
+    overflow: visible !important; /* S'assurer que le dropdown n'est pas masqué */
+}
+
 .dropdown .submenu {
     display: none;
     position: absolute;
     left: 0;
     top: 100%;
     margin-top: 0px;
-    background-color: rgb(205, 241, 205);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 10px 0;
-    z-index: 10;
+    background-color: rgb(252, 255, 252);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+    padding: 5px 5px;
+    z-index: 20001 !important; /* Ajout de !important pour forcer la priorité */
     min-width: 200px;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
     list-style: none;
 }
 
 .dropdown:hover .submenu {
     display: block;
-    opacity: 1;
+    opacity: 0.9;
     margin: 0 auto;
 }
 
@@ -152,91 +245,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* ----- Section Hero ----- */
-.hero {
-    background-image: url('media/images/fond.png');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-.large-text {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 1.8em;
-}
-
-.hero-content h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content p {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #0f6d2e;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.large-text {
-    font-size: 8em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-/* ----- section box nosActivités ----- */
+/* ----- section box ----- */
 .box {
     display: flex;
     align-items: center;
@@ -254,8 +263,7 @@ h2 {
 
 .image-box {
     width: 150px;
-    height: 150px;
-    background-color: #d2eafa;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -272,7 +280,7 @@ h2 {
 }
 
 .image-box:hover {
-    transform: scale(1.1);
+    transform: scale(3) translateX(50px);
 }
 
 .text-box {
@@ -316,11 +324,12 @@ h2 {
 .contact-form {
     max-width: 600px;
     margin: 20px auto;
-    border: 1px solid #007BFF;
-    background-color: #e1f3e9;
+    border: 1px solid #25bb3e9c;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
 }
 
 .contact-form input, 
@@ -330,19 +339,18 @@ h2 {
     margin: 15px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #bff0cb;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus, 
 .contact-form textarea:focus {
-    border-color: #007BFF; 
+    border-color: #25bb3e9c; 
     box-shadow: 0 0 8px #b8e7cc;
     outline: none;
 }
 
 .contact-form button {
-    background-color: rgba(76, 175, 80, 0.5);  /* Bouton vert */
+    background-color: rgba(76, 175, 80, 0.5);
     color: white;
     padding: 10px 15px;
     border: none;
@@ -371,8 +379,8 @@ h2 {
 }
 
 .contact-form:hover {
-    transform: translate(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /*transform: scale(1.02);*/
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* Style général pour les champs de formulaire */
@@ -526,15 +534,49 @@ select:disabled {
 
 /* ----- Footer ----- */
 footer {
-    background: #FFF;
+    background: #f4f4f9;
     border-top: 1px solid #0a8633;
-    color: #0056b3;
     text-align: center;
-    padding: 7px 0; 
+    padding: 20px 0;
     position: relative;
     width: 100%;
     margin-bottom: 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+footer a {
+    color: #0a8633;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #0a8633;
+}
+
+
+
 
 /* ----- Google Traduction (Suppression propre et optimisée) ----- */
 #google_translate_element, 
@@ -551,7 +593,7 @@ body > .skiptranslate {
 .translate-btn {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 10px;
     background: #007bff;
     color: white;
     border: none;
@@ -560,6 +602,7 @@ body > .skiptranslate {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s ease;
+    z-index: 10000; /* Ajout de z-index pour mettre le bouton en avant-plan */
 }
 /* ----- Bouton de traduction sur les autres pages (au survol) ----- */
 .translate-btn:hover {
