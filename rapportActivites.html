@@ -1,125 +1,97 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="SheerLab">
-    <meta name="keywords" content="FTSCD, Forum Togolais de la Société Civile pour le Développement, Togo, Société Civile, Développement, Gouvernance, Citoyenneté, ONG, corruption, droits de l'homme, démocratie, paix, environnement, partenariats">  
-    <title>FTSCD - Forum Togolais de la Société Civile pour le Développement</title>
-    <link rel="icon" type="image/svg+xml" href="media/images/logo.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  </head>
+    <meta name="keywords" content="FTSCD, Forum Togolais Société Civile Développement, Togo, Gouvernance, Citoyenneté, corruption, droits de l'homme, démocratie, paix, environnement">
+    <meta name="description" content="Téléchargez les rapports annuels d'activités du FTSCD pour suivre nos réalisations et notre impact. Rapports 2023 et 2022 disponibles.">
+    
+    <title>FTSCD - Rapports d'Activités</title>
+    <link rel="icon" type="image/png" href="media/images/logo.png">
 
-         <!-- Barre de navigation -->
-   <header class="navbar">
-       <nav>
-            <ul class="nav-list">
-                <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
-                <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
-                <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
-                <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
-                <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-                    <ul class="submenu">
-                        <li><a href="images.html">Images</a></li>
-                        <   li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="coupuresPresse.html">Coupures de presse</a></li>
-                        <li><a href="articlesPresse.html">Articles de presse</a></li>
-                    </ul>
-                <li><a href="contact.html" class="btn-login">CONTACT</a></li>
-            </ul>
-       </nav>
-    </header>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJ"
+        crossorigin=""/>
+</head>
 <body>
-   <!-- Conteneur pour la barre de navigation
-   <div id="navbar-container"></div> -->
-    
-    <!--bouton traduction -->
-    <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div
-    
-  <div class="container">
-    <section id="rapportActivites" class="section">
-      <div class="box">
-          <div class="text-box">
-          <h2>RAPPORTS D'ACTIVITES</h2><br>
-    <p>Le Forum Togolais de la Société Civile pour le Développement (FTSCD) met à votre disposition ses rapports d'activités annuels. Ces documents détaillent nos initiatives, nos réalisations et les impacts de nos actions dans divers domaines.</p>
-     <br>
+<header class="main-header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
+        </a>
+    </div>
+    <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu de navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="navbar main-nav">
+        <ul class="nav-list">
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="apropos.html">À PROPOS</a></li>
+            <li><a href="nosActivites.html">ACTIVITÉS</a></li>
+            <li><a href="rapportActivites.html">RAPPORTS D'ACTIVITÉS</a></li>
+            <li class="dropdown">
+                <a href="mediatheque.html" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MÉDIAS</a>
+                <ul class="submenu">
+                    <li><a href="mediatheque.html#images">Images</a></li>
+                    <li><a href="mediatheque.html#videos">Vidéos</a></li>
+                    <li><a href="mediatheque.html#coupures-presse">Coupures de presse</a></li>
+                    <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+  
+  <div class="main-container">
+    <section id="rapports-contenu" class="section">
+      <h1>Rapports d'Activités</h1>
+      <hr>
+      <p>Retrouvez ci-dessous les rapports d'activités annuels du FTSCD, détaillant nos réalisations, nos défis et nos perspectives pour l'avenir.</p>
 
-    <h1>Rapport d'Activités 2023</h1>
-    <hr>
-    <a href="media/pdf/RAPPORT_2023_FTSCD.pdf" class="btn-download" target="_blank">Télécharger en PDF.</a>
-    <p>Le <strong>FTSCD</strong> (Forum Togolais pour la Société Civile et le Développement), créé en 2003, a pour mission de promouvoir le développement social, économique et culturel au Togo. En 2022, plusieurs événements clés ont marqué son engagement, notamment des célébrations pour la <strong>
-      Journée internationale des pauvres</strong> et la <strong>Journée mondiale de lutte contre la corruption</strong>,
-       visant à sensibiliser la population aux enjeux cruciaux de la pauvreté et de la corruption.</p>
-    <br>
+      <h2>Rapport Annuel 2023 : Vers une Citoyenneté Accrue</h2>
+      <p>Le rapport 2023 met en lumière nos efforts pour la **décentralisation** et le **renforcement des capacités des jeunes**. Il détaille l'impact de nos programmes de formation citoyenne dans les régions de Kara et Lomé.</p>
+      <a href="media/pdf/RAPPORT_2023_FTSCD.pdf" target="_blank" class="cta-button" download>Télécharger le Rapport 2023</a>
+      
+      <br><br>
 
-    <h3>Points Clés du Rapport :</h3>
-    
-    <ul>
-        <li><strong>Pauvreté</strong> : Selon un exposé de M. KAOULA Manzamisso, le taux de pauvreté en milieu rural est deux fois plus élevé qu'en milieu urbain (58,8 % contre 26,5 %). De plus, les ménages dirigés par des femmes sont particulièrement vulnérables, avec un taux de pauvreté de 45,7 %.</li>
-        <li><strong>Revues de Réformes</strong> : Le FTSCD a pris part à des revues de réformes, avec le soutien du secrétaire général du ministère de l’Économie, mettant en lumière la lutte contre la pauvreté. À l'échelle mondiale, environ 736 millions de personnes vivent en dessous du seuil de pauvreté.</li>
-        <li><strong>Lutte contre les Inégalités</strong> : L'organisation continue de remettre en question les normes sociales qui perpétuent les inégalités de genre et soutient activement les efforts pour une meilleure gouvernance.</li>
-        <li><strong>Rencontres Institutionnelles</strong> : Des rencontres ont été organisées avec des institutions telles que la <strong>CEDEAO</strong> et la <strong>HAPLUCIA</strong> pour renforcer la bonne gouvernance et lutter contre la corruption.</li>
-        <li><strong>Renforcement Régional</strong> : L'antenne régionale de Kara a été redynamisée, et le FTSCD s'engage à participer activement aux initiatives de la société civile.</li>
-    </ul><br>
+      <h2>Rapport Annuel 2022 : Plaidoyer et Transparence</h2>
+      <p>Le rapport 2022 présente l'ensemble des actions menées par le FTSCD en faveur de la démocratie et de la **bonne gouvernance**, avec un focus sur les campagnes de sensibilisation aux droits humains. Il met en avant les résultats du projet de suivi budgétaire.</p>
+      <a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="cta-button" download>Télécharger le Rapport 2022</a>
+      
+      <br><br>
 
-    <h3>Engagements Futurs :</h3>
-    <p>Le FTSCD met en avant la nécessité d'améliorer l'accès à l'éducation, à la santé et aux services de base pour lutter contre la pauvreté et l'exclusion sociale. Il appelle à une collaboration accrue entre les pouvoirs publics, les confessions religieuses et les acteurs de la société civile pour apporter un soutien aux personnes en difficulté.</p>
-    <br>
-    <h1>Rapport d'Activités 2022</h1> 
-    <hr>  
-    <a href="media/pdf/RAPPORT_2022_FTSCD.pdf"  target="_blank" class="btn-download" download>Télécharger en pdf.</a>
-    <p>En 2022, le FTSCD a organisé plusieurs événements marquants, incluant :</p>
-    <ul>
-        <li>Transmission du rapport de l'atelier de plaidoyer sur la lutte contre la corruption aux institutions étatiques.</li>
-        <li>Adoption du <strong>Plan d'Actions 2022-2024</strong>, définissant les orientations stratégiques pour les trois prochaines années.</li>
-        <li>Causerie-débat sur l'indice de perception de la corruption (IPC) 2022 du Togo, visant à sensibiliser la population sur les enjeux de la corruption.</li>
-    </ul><br>
-
-    <p>Le FTSCD a renforcé ses collaborations avec d'autres organisations de la société civile, des institutions étatiques et des partenaires techniques. Ces échanges ont permis d'élargir l'impact des actions menées tout en partageant des bonnes pratiques.</p>
-
-    <h3>Points Clés du Rapport</h3>
-    <ul>
-        <li><strong>Lutte contre la corruption</strong> : Mise en place de stratégies de plaidoyer et transmission des résultats aux autorités compétentes.</li>
-        <li><strong>Renforcement de la démocratie</strong> : Promotion de l'engagement citoyen dans les processus décisionnels.</li>
-        <li><strong>Sensibilisation à la bonne gouvernance</strong> : Organisation de débats publics pour mieux comprendre les enjeux de la gouvernance et de la corruption.</li>
-    </ul><br>
-
-    <h3>Engagements Futurs</h3>
-    <p>Pour l'avenir, le FTSCD s'engage à :</p>
-    <ul>
-        <li>Promouvoir la participation citoyenne dans les décisions politiques et sociales.</li>
-        <li>Renforcer le plaidoyer en faveur d'une gouvernance transparente et d'une lutte accrue contre la corruption.</li>
-        <li>Étendre ses partenariats pour garantir la mise en œuvre efficace de ses actions.</li>
-        <li>Continuer les initiatives de sensibilisation sur la démocratie et la bonne gouvernance.</li>
-    </ul>
-    <br>
-
-    <h1>Autres Rapports d'Ativités</h1>
-    <hr>
-       <p><strong>Rapport d'Activité 2021:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-       <p><strong>Rapport d'Activité 2020:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-       <p><strong>Rapport d'Activité 2019:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-       <p><strong>Rapport d'Activité 2018:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-       <p><strong>Rapport d'Activité 2017:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-       <p><strong>Rapport d'Activité 2016:  </strong><a href="media/pdf/RAPPORT_2022_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
-    
-  </section>
-
+      <h1>Autres Rapports d'Activités</h1>
+      <hr>
+      <p><strong>Rapport d'Activité 2021:  </strong><a href="media/pdf/RAPPORT_2021_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+         <p><strong>Rapport d'Activité 2020:  </strong><a href="media/pdf/RAPPORT_2020_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+         <p><strong>Rapport d'Activité 2019:  </strong><a href="media/pdf/RAPPORT_2019_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+         <p><strong>Rapport d'Activité 2018:  </strong><a href="media/pdf/RAPPORT_2018_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+         <p><strong>Rapport d'Activité 2017:  </strong><a href="media/pdf/RAPPORT_2017_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+         <p><strong>Rapport d'Activité 2016:  </strong><a href="media/pdf/RAPPORT_2016_FTSCD.pdf" target="_blank" class="btn-download" download>  Télécharger.</a></p>
+    </section>
   </div>
- 
-  <footer>
-    <p>&copy; 2025 FTSCD | Tous droits réservés.</p>
-    <p>Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab,%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank">Sheerslab</a></p>
+
+<footer class="site-footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
+        <p class="mb-0">Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" rel="noopener noreferrer" class="text-info">Sheerslab</a></p>
+    </div>
   </footer>
 
-        <script src="assets/js/script.js"></script>
-        <script src="assets/js/main.js"></script>
-  </body
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
 </html>

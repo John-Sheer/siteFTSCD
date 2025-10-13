@@ -1,49 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="SheerLab">
-    <meta name="keywords" content="FTSCD, Forum Togolais de la Société Civile pour le Développement, Togo, Société Civile, Développement, Gouvernance, Citoyenneté, ONG, corruption, droits de l'homme, démocratie, paix, environnement, partenariats">  
-    <title>FTSCD - Forum Togolais de la Société Civile pour le Développement</title>
-    <link rel="icon" type="image/svg+xml" href="media/images/logo.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  </head>
-
- <!-- Barre de navigation -->
-<header class="navbar">
-        <nav>
-            <ul class="nav-list">
-                <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
-                <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
-                <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
-                <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
-          <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a>
-                    <ul class="submenu">
-                        <li><a href="images.html">Images</a></li>
-                        <li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="coupuresPresse.html">Coupures de presse</a></li>
-                        <li><a href="articlesPresse.html">Articles de presse</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html" class="btn-login">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-<body>
-    <!-- bouton traduction -->
-  <div id="translate-btn" class="translate-btn" onclick="toggleLanguage()">ENG</div>
+    <meta name="keywords" content="FTSCD, Forum Togolais Société Civile Développement, Togo, Gouvernance, Citoyenneté, corruption, droits de l'homme, démocratie, paix, environnement">
+    <meta name="description" content="Contactez le FTSCD pour toute question, partenariat ou information sur nos activités.">
     
-    <div class="container">
-    <section id="contact" class="section">
-      <h2>CONTACT ET INFORMATIONS</h2>
-      <p>Pour toute information, suggestion ou demande de partenariat, n'hésitez pas à nous contacter. Nous sommes à votre écoute et nous vous répondrons dans les plus brefs délais.</p>
+    <title>FTSCD - Contact</title>
+    <link rel="icon" type="image/png" href="media/images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJ"
+        crossorigin=""/>
+</head>
+<body>
+<header class="main-header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
+        </a>
+    </div>
+    <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu de navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+    <nav class="navbar main-nav">
+        <ul class="nav-list">
+            <li><a href="index.html">ACCUEIL</a></li>
+            <li><a href="apropos.html">À PROPOS</a></li>
+            <li><a href="nosActivites.html">ACTIVITÉS</a></li>
+            <li><a href="rapportActivites.html">RAPPORTS D'ACTIVITÉS</a></li>
+            <li class="dropdown">
+                <a href="mediatheque.html" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MÉDIAS</a>
+                <ul class="submenu">
+                    <li><a href="mediatheque.html#images">Images</a></li>
+                    <li><a href="mediatheque.html#videos">Vidéos</a></li>
+                    <li><a href="mediatheque.html#coupures-presse">Coupures de presse</a></li>
+                    <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
+  
+  <div class="main-container">
+    <section id="coordonnees" class="section">
+      <h1>Nous Contacter</h1>
+      <p>Nous vous invitons à nous contacter par téléphone, email ou en remplissant le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
       <br><br>
       <section class="contact-info">
         <h3>Informations de contact</h3>
@@ -52,26 +65,34 @@
         <p><strong>Antenne régionale :</strong> Kara, quartier Cofac</p>
         <p><strong>Email :</strong> <a href="mailto:ftscd24@yahoo.fr">ftscd24@yahoo.fr</a></p>
         <p><strong>Téléphone :</strong> +228 90 19 51 10 / +228 91 25 57 74 / +228 91 52 66 67</p>
-    </section>
+      </section>
 
-    <section id="contact" class="section"> 
+      <section id="contact" class="section"> 
       <h2>Contactez-nous</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Votre Nom" required>
-        <input type="email" placeholder="Votre Email" required>
-        <input type="tel" placeholder="Votre Numéro de Téléphone (optionnel)">
-        <textarea placeholder="Votre Message" rows="5" required></textarea>
+      <form class="contact-form" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
+        
+        <input type="text" id="nom" name="Nom" placeholder="Votre Nom" required aria-label="Nom">
+        <input type="email" id="email" name="Email" placeholder="Votre Email" required aria-label="Email">
+        <input type="tel" id="telephone" name="Telephone" placeholder="Votre Téléphone" aria-label="Numéro de Téléphone">
+        <textarea id="message" name="Message" placeholder="Votre Message" rows="5" required aria-label="Message"></textarea>
+        
+        <input type="hidden" name="_honey" style="display:none;">
+
         <button type="submit">Envoyer le Message</button>
       </form>
     </section>
   </div>  
 
-  <footer>
-    <p>&copy; 2025 FTSCD | Tous droits réservés.</p>
-    <p>Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab,%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank">Sheerslab</a></p>
+<footer class="site-footer bg-dark text-white py-4">
+    <div class="container text-center">
+        <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
+        <p class="mb-0">Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" rel="noopener noreferrer" class="text-info">Sheerslab</a></p>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/main.js"></script>
+
 </body>
 </html>
