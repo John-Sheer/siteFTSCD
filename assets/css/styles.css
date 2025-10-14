@@ -156,10 +156,8 @@ h1, h2, h3 {
 }
 
 /* ==================================== */
-/* 3. SECTIONS SPÉCIFIQUES ET FORMULAIRES */
+/*            SECTIONS HERO             */
 /* ==================================== */
-
-/* Section Hero (Accueil) */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('media/images/hero-bg.jpg') no-repeat center center/cover;
     color: white;
@@ -191,13 +189,15 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-/* Formulaires */
+/* ==================================== */
+/*             FORMULAIRES              */
+/* ==================================== */
 .contact-form {
     background: #fff;
-    padding: 32px 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    max-width: 500px;
+    padding: 16px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    max-width: 350px;
     margin: 0 auto;
 }
 
@@ -206,12 +206,12 @@ h1, h2, h3 {
 .contact-form input[type="tel"],
 .contact-form textarea {
     width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 18px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 6px;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 0.95rem;
     background: #f8f9fa;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
@@ -227,13 +227,13 @@ h1, h2, h3 {
 }
 
 .contact-form textarea {
-    min-height: 120px;
+    min-height: 60px;
     resize: vertical;
 }
 
 .contact-form label {
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     display: block;
     color: var(--secondary-color);
     font-family: var(--font-primary);
@@ -242,24 +242,24 @@ h1, h2, h3 {
 /* bouton envoyer */
 .contact-form button[type="submit"] {
     display: block;
-    margin: 24px auto 0 auto;
-    background-color: var(--accent-color); /* Vert */
+    margin: 12px auto 0 auto;
+    background-color: var(--accent-color);
     color: white;
-    padding: 14px 28px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(40,167,69,0.12);
+    box-shadow: 0 2px 8px rgba(40,167,69,0.10);
     transition: background-color 0.3s, box-shadow 0.3s;
     letter-spacing: 1px;
 }
 
 .contact-form button[type="submit"]:hover {
     background-color: #218838;
-    box-shadow: 0 4px 16px rgba(40,167,69,0.18);
+    box-shadow: 0 4px 16px rgba(40,167,69,0.15);
 }
 
 
