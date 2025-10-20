@@ -307,13 +307,13 @@ h1, h2, h3, h4 {
 =====================================
 */
 .hero-section {
-    height: 75vh;
+    height: 60vh;
     min-height: 400px;
     position: relative;
 }
 
 .carousel-img {
-    height: 75vh;
+    height: 60vh;
     object-fit: cover;
     filter: brightness(0.8); /* Assurez-vous d'une bonne obscurité de base */
 }
