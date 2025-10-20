@@ -469,26 +469,35 @@ h1, h2, h3, h4 {
   Footer
 =====================================
 */
-.site-footer {
-    border-top: 5px solid var(--color-primary);
-}
 
+/* Définition du conteneur pour positionner la ligne si nécessaire */
 .footer-title {
-    font-family: var(--font-heading);
-    font-weight: 600;
-    color: white;
-    margin-bottom: 20px;
-    position: relative;
-}
+    position: relative; 
+    }
 
+/* Style et alignement de la ligne sous les titres du footer */
 .footer-title::after {
     content: '';
-    display: block;
-    width: 40px;
-    height: 2px;
-    background-color: var(--color-accent);
-    margin-top: 5px;
-    border-radius: 5px;
+    display: block; 
+    width: 60px; 
+    height: 3px; 
+    background-color: #4CAF50; 
+    margin: 5px 0px 5px 0px; 
+    transform: none; 
+}
+
+.site-footer .col-md-4:nth-child(1) .footer-title::after {
+    margin-left: 50px; 
+}
+
+.site-footer .col-md-4:nth-child(2) .footer-title::after {
+    margin-left: 20px ;
+    transform: none; 
+}
+
+.site-footer .col-md-4:nth-child(3) .footer-title::after {
+    margin-left: 40px ;
+    transform: none; 
 }
 
 .footer-list li {
@@ -499,6 +508,8 @@ h1, h2, h3, h4 {
     transition: color 0.3s ease;
     font-size: 0.95rem;
 }
+
+.footer
 
 .footer-list a:hover {
     color: var(--color-accent) !important;
@@ -513,9 +524,7 @@ h1, h2, h3, h4 {
     color: var(--color-accent) !important;
 }
 
-/* AJOUTS CSS POUR LE JAVASCRIPT */
-
-/*
+/* 
 =====================================
   4. Styles spécifiques aux scripts JS
 =====================================

@@ -1,192 +1,293 @@
 /**
  * Fichier : assets/js/script.js
  * Rôle : Gérer l'interaction du menu, l'état du header et les améliorations dynamiques.
+ * Note : Toutes les fonctions externes sont définies AVANT le bloc DOMContentLoaded pour la clarté.
  */
 
-document.addEventListener('DOMContentLoaded', function() {
-
-    const mainHeader = document.querySelector('.main-header');
-    const mainNav = document.querySelector('.main-nav');
-    
-    // ===========================================
-    // 1. Gestion du Menu Hamburger (Mobile)
-    // ===========================================
-
-    const menuToggle = document.getElementById('mobile-menu');
-
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', function() {
-            this.classList.toggle('active'); 
-            mainNav.classList.toggle('menu-open'); 
-
-            const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
-            this.setAttribute('aria-expanded', !isExpanded);
-        });
-    }
-    // ===========================================
-// 7. Affichage du commentaire sous les images de la galerie
+// ===========================================
+// FONCTIONS EXTERNALISÉES (Nécessaires pour l'inclusion dynamique et les fonctionnalités)
 // ===========================================
 
-function displayImageCaptions() {
-    // Cibler tous les conteneurs d'éléments de galerie
-    const galleryItems = document.querySelectorAll('.image-gallery-item');
-
-    galleryItems.forEach(item => {
-        const image = item.querySelector('img');
-        const existingOverlay = item.querySelector('.overlay-text');
-
-        // Assurez-vous que l'image et le texte d'overlay existent
-        if (image && existingOverlay) {
-            
-            // 1. Récupérer le texte (l'alt de l'image) ou le texte existant dans l'overlay
-            // Nous allons prioriser l'alt pour la description, si vous le souhaitez.
-            // Si vous préférez utiliser le texte déjà dans la div .overlay-text, utilisez:
-            // const captionText = existingOverlay.textContent.trim();
-            
-            // UTILISATION DU TEXTE DÉJÀ PRÉSENT DANS .overlay-text (selon votre HTML fourni)
-            const captionText = existingOverlay.textContent.trim();
-
-            // 2. Créer l'élément de légende (Caption)
-            const captionDiv = document.createElement('div');
-            
-            // Utilisation de classes Bootstrap pour le style (sans ajouter de nouveau CSS)
-            // p-2 pour le padding, text-center pour le centrage, bg-light pour le fond
-            captionDiv.className = 'image-caption p-2 text-center bg-light text-dark';
-            captionDiv.style.fontWeight = '600'; // Rendre le texte plus visible (style inline minimal)
-            captionDiv.style.fontSize = '0.9rem';
-            captionDiv.style.borderTop = '1px solid #ccc'; // Ajout d'une ligne de séparation
-
-            // 3. Remplir le contenu
-            captionDiv.textContent = captionText;
-
-            // 4. Retirer le texte d'overlay initial (car il est souvent positionné en absolu)
-            existingOverlay.remove();
-            
-            // 5. Insérer la nouvelle légende DYNAMIQUE après l'image (dans le conteneur .image-gallery-item)
-            item.appendChild(captionDiv);
-
-            // Mise à jour du style du conteneur pour qu'il ne soit plus 'overflow: hidden'
-            // Cela permet à la légende de s'afficher sans être coupée.
-            item.style.overflow = 'visible'; 
-            
-            // Retirer l'ombre sur l'image elle-même, si vous voulez que la légende soit incluse dans le style
-            // item.classList.remove('shadow-sm'); // Si vous avez une ombre que vous souhaitez conserver sur l'ensemble
-        }
-    });
+// Fonction de bascule pour le menu (gestion du bouton hamburger)
+function handleMenuToggle() {
+    const mainNav = document.querySelector('.main-nav');
+    // 'this' est le bouton mobile-menu
+    this.classList.toggle('active');
+    mainNav.classList.toggle('menu-open');
+    const isExpanded = this.getAttribute('aria-expanded') === 'true'; 
+    this.setAttribute('aria-expanded', !isExpanded);
 }
 
-// Lancer la fonction après le chargement complet du DOM
-displayImageCaptions();
+// Fonction de vérification du scroll (gestion du header sticky)
+function checkScroll() {
+    const mainHeader = document.querySelector('.main-header');
+    if (mainHeader) {
+        if (window.scrollY > 50) {
+            mainHeader.classList.add('scrolled');
+        } else {
+            mainHeader.classList.remove('scrolled');
+        }
+    }
+}
 
-    // ===========================================
-    // 2. Gestion des Sous-Menus (Dropdowns)
-    // ===========================================
-
-    const dropdownToggles = document.querySelectorAll('.dropdown > .dropdown-toggle');
-
-    dropdownToggles.forEach(toggle => {
-        const parentLi = toggle.closest('li.dropdown');
-
-        toggle.addEventListener('click', function(e) {
-            // Sur desktop, on veut laisser le :hover faire le travail
-            if (window.innerWidth < 992) {
-                e.preventDefault(); 
-                parentLi.classList.toggle('active');
-                
-                const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
-                toggle.setAttribute('aria-expanded', !isExpanded);
-            }
-        });
-        
-        // Ferme tous les sous-menus ouverts lorsque l'on clique ailleurs (Mobile/Tablette)
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth < 992 && !parentLi.contains(e.target) && parentLi.classList.contains('active')) {
-                 parentLi.classList.remove('active');
-                 toggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    });
-    
-    // ===========================================
-    // 3. Highlight de la page active (Active Link)
-    // ===========================================
-    
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html'; // Récupère le nom du fichier ou 'index.html'
-
+// Fonction de mise en évidence de la page active dans la navigation
+function highlightActivePage() {
+    // Utilise 'index.html' si l'URL se termine par un slash
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-list a');
 
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href').split('/').pop();
         
-        // Gère les liens dans les sous-menus et les liens principaux
         if (linkPath === currentPath) {
-            // Ajoute la classe 'active' au <li> parent direct du lien
             link.closest('li').classList.add('active');
             
-            // Si le lien est dans un sous-menu, ajoute aussi 'active' au <li> parent (dropdown)
             const parentDropdown = link.closest('.dropdown');
             if (parentDropdown) {
                 parentDropdown.classList.add('active');
             }
         }
     });
+}
 
-
-    // ===========================================
-    // 4. Header Sticky Style (ajoute une classe au scroll)
-    // ===========================================
+// Fonction pour réinitialiser les écouteurs JS après l'insertion dynamique de la navbar
+function initializeHeaderFeatures() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const mainNav = document.querySelector('.main-nav');
     
-    if (mainHeader) {
-        // Fonction pour vérifier la position de défilement
-        const checkScroll = () => {
-            if (window.scrollY > 50) {
-                // Utilisation de la classe 'scrolled' pour le style
-                mainHeader.classList.add('scrolled');
-            } else {
-                mainHeader.classList.remove('scrolled');
-            }
-        };
+    if (menuToggle && mainNav) {
+        // Supprimer l'écouteur pour éviter d'en empiler un nouveau à chaque appel
+        menuToggle.removeEventListener('click', handleMenuToggle); 
+        menuToggle.addEventListener('click', handleMenuToggle);
+    }
 
-        // Événement d'écoute au chargement et au défilement
-        window.addEventListener('scroll', checkScroll);
-        // Exécuter une fois au chargement au cas où l'utilisateur arrive en milieu de page
+    // Ré-initialiser la gestion du Header Sticky
+    const mainHeader = document.querySelector('.main-header');
+    if (mainHeader) {
         checkScroll();
     }
 
+    highlightActivePage();
 
-    // ===========================================
-    // 5. Scroll fluide pour les ancres
-    // ===========================================
+    // Rendre les dropdowns fonctionnels (pour la bascule au clic en mode mobile)
+    const dropdownToggles = document.querySelectorAll('.dropdown > a.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        const parentLi = toggle.closest('li.dropdown');
+
+        // Nettoyage de l'ancien écouteur avant d'en ajouter un nouveau (pour éviter les doublons)
+        const existingClickListener = toggle.listener;
+        if (existingClickListener) {
+            toggle.removeEventListener('click', existingClickListener);
+        }
+
+        const newClickListener = function(e) {
+            // Activer la logique de bascule uniquement sur les petits écrans
+            if (window.innerWidth < 992) {
+                e.preventDefault();
+                parentLi.classList.toggle('active');
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+            }
+        };
+
+        toggle.addEventListener('click', newClickListener);
+        toggle.listener = newClickListener; // Stocker la référence pour la suppression future
+    });
+}
+
+// ===========================================
+// Gestion des Dropdowns (Fermeture au clic extérieur en mode mobile)
+// ===========================================
+function setupDropdownCloseHandler() {
+    // Écouteur global pour fermer les dropdowns actifs au clic extérieur
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 992) {
+            document.querySelectorAll('li.dropdown.active').forEach(parentLi => {
+                // Vérifier si le clic est en dehors du dropdown actif
+                if (!parentLi.contains(e.target)) {
+                    parentLi.classList.remove('active');
+                    const toggle = parentLi.querySelector('.dropdown-toggle');
+                    if (toggle) {
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+    });
+}
+
+// ===========================================
+// Inclusion dynamique de Navbar et Footer (via JS/Fetch)
+// ===========================================
+
+/**
+ * Récupère un fichier HTML partiel et l'insère dans un élément cible.
+ * @param {string} url - Le chemin vers le fichier partiel (e.g., 'includes/navbar.html').
+ * @param {string} targetId - L'ID de l'élément où insérer le contenu (e.g., 'navbar-placeholder').
+ */
+function includeHtml(url, targetId) {
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erreur de chargement du fichier ${url}: ${response.status} ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(html => {
+                targetElement.innerHTML = html;
+
+                if (targetId === 'navbar-placeholder') {
+                    // Initialiser les fonctionnalités dépendantes de la navbar APRÈS l'insertion
+                    initializeHeaderFeatures(); 
+                }
+                return targetElement;
+            })
+            .catch(error => {
+                console.error(`Impossible d'inclure ${url}. Veuillez vérifier le chemin ou le statut du serveur.`, error);
+                targetElement.innerHTML = `<p style="color: red;">Erreur: Contenu ${targetId} non chargé. (${error.message})</p>`;
+                return null;
+            });
+    }
+    return Promise.resolve(null); 
+}
+
+// ===========================================
+// Affichage du commentaire sous les images de la galerie
+// ===========================================
+function displayImageCaptions() {
+    const galleryItems = document.querySelectorAll('.image-gallery-item');
+
+    galleryItems.forEach(item => {
+        const image = item.querySelector('img');
+        const existingOverlay = item.querySelector('.overlay-text'); 
+
+        if (image && existingOverlay) {
+            const captionText = existingOverlay.textContent.trim();
+            const captionDiv = document.createElement('div');
+
+            // Application des styles
+            captionDiv.className = 'image-caption p-2 text-center bg-light text-dark';
+            captionDiv.style.fontWeight = '600';
+            captionDiv.style.fontSize = '0.9rem';
+            captionDiv.style.borderTop = '1px solid #ccc'; 
+            captionDiv.textContent = captionText;
+
+            // Remplacement
+            existingOverlay.remove();
+            item.appendChild(captionDiv);
+
+            item.style.overflow = 'visible';
+        }
+    });
+}
+
+// ===========================================
+// Initialisation de la Carte Leaflet
+// ===========================================
+function initLeafletMap() {
+    // Coordonnées de 6°14'12"N 1°10'25"E (Degrés Décimaux)
+    const LAT = 6.236666; 
+    const LNG = 1.173611; 
+    const ZOOM_LEVEL = 16; 
+
+    const mapElement = document.getElementById('map');
+    
+    // Vérifier si l'élément existe ET si l'objet Leaflet (L) est chargé
+    if (mapElement && typeof L !== 'undefined') {
+        
+        // VÉRIFICATION CRITIQUE: Détruire TOUTE instance PRÉCÉDENTE
+        if (mapElement._leaflet_id !== undefined) {
+            try {
+                L.map(mapElement).remove(); 
+            } catch (e) {
+                console.warn("Ancienne instance Leaflet non trouvée ou destruction impossible.", e);
+            }
+        }
+        
+        // 3. Créer la NOUVELLE instance de la carte
+        const map = L.map('map').setView([LAT, LNG], ZOOM_LEVEL);
+
+        // 💡 AJOUT CRUCIAL : Force la carte à se redimensionner et se recentrer après le rendu.
+        map.invalidateSize(); 
+
+        // 4. Ajouter les tuiles (le fond de carte)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // 5. Ajouter un marqueur
+        L.marker([LAT, LNG]).addTo(map)
+            .bindPopup('<b>FTSCD</b><br>Notre Emplacement.')
+            .openPopup();
+            
+        // Supprimer le texte de placeholder
+        const placeholder = mapElement.querySelector('p');
+        if (placeholder) {
+            placeholder.remove();
+        }
+    } else if (mapElement) {
+        console.warn("Leaflet n'est pas chargé. Vérifiez les balises <script>.");
+    }
+}
+
+// ===========================================
+// DÉMARRAGE DU SCRIPT PRINCIPAL (Un seul bloc DOMContentLoaded)
+// ===========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Initialiser la gestion du header sticky (écouteur sur la fenêtre)
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Exécuter une première fois au chargement
+    
+    // 2. Initialiser le gestionnaire de fermeture des dropdowns (gestionnaire unique)
+    setupDropdownCloseHandler();
+
+    // 3. Démarrer l'inclusion des fichiers dynamiques
+    Promise.all([
+        includeHtml('includes/navbar.html', 'navbar-placeholder'), 
+        includeHtml('includes/footer.html', 'footer-placeholder')
+    ]).then(() => {
+        // Ces fonctions s'exécutent APRÈS que le DOM dynamique est chargé.
+        
+        // 4. Amélioration du Carousel
+        const heroCarousel = document.getElementById('hero-carousel');
+        if (heroCarousel && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
+            new bootstrap.Carousel(heroCarousel, {
+                interval: 3000,
+                pause: 'hover'
+            });
+        }
+        
+        // 5. Affichage des légendes
+        displayImageCaptions();
+        
+        // 6. Initialisation de la carte 
+        initLeafletMap();
+    });
+
+
+    // 7. Scroll fluide pour les ancres
+    const mainHeader = document.querySelector('.main-header'); 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
-            // Récupère l'élément cible
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                 // Fait défiler la fenêtre en douceur
+                // Détermine la hauteur du header (sticky ou non) pour le décalage (offset)
+                const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
                 window.scrollTo({
-                    top: targetElement.offsetTop - (mainHeader ? mainHeader.offsetHeight : 0), // Ajuste pour la hauteur du header fixe
+                    top: targetElement.offsetTop - headerHeight, 
                     behavior: 'smooth'
                 });
             }
         });
     });
-
-
-    // ===========================================
-    // 6. Amélioration du Carousel (uniquement sur index.html)
-    // ===========================================
-    const heroCarousel = document.getElementById('hero-carousel');
-    if (heroCarousel) {
-        const carousel = new bootstrap.Carousel(heroCarousel, {
-            interval: 3000, // Intervalle standard (5s)
-            pause: 'hover'   // Pause l'auto-play sur survol
-        });
-
-        // La classe 'bootstrap' doit être disponible (ce qui est le cas puisque vous la chargez dans votre HTML)
-    }
 
 });
