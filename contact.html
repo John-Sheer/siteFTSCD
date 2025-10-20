@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CDQ6P/6Kk4B4X/B/047C6X6yJ516K/3A+c5k0J7t9M7l/kGf9g1w1w1w1w1w" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css"> 
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -22,7 +23,7 @@
         crossorigin=""/>
 </head>
 <body>
-<header class="main-header">
+<header class="main-header sticky-top">
     <div class="logo">
         <a href="index.html">
             <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
@@ -48,51 +49,145 @@
                     <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
                 </ul>
             </li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html" class="btn btn-outline-primary-ftscd d-none d-lg-inline-block ms-3">CONTACT</a></li>
         </ul>
     </nav>
 </header>
   
   <div class="main-container">
-    <section id="coordonnees" class="section" style="text-align: center;">
-      <h1>Nous Contacter</h1>
-      <p>Nous vous invitons à nous contacter par téléphone, email ou en remplissant le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
-      <br><br>
-      <section class="contact-info">
-        <h3>Informations de contact</h3>
-        <p><strong>Nom :</strong> Forum Togolais de la Société Civile pour le Développement (FTSCD)</p>
-        <p><strong>Adresse :</strong> Quartier Agoè-Logopé, en face du Centre d’accueil des réfugiés, Lomé, Togo</p>
-        <p><strong>Antenne régionale :</strong> Kara, quartier Cofac</p>
-        <p><strong>Email :</strong> <a href="mailto:ftscd24@yahoo.fr">ftscd24@yahoo.fr</a></p>
-        <p><strong>Téléphone :</strong> +228 90 19 51 10 / +228 91 25 57 74 / +228 91 52 66 67</p>
-      </section>
-
-      <section id="contact" class="section"> 
-      <h2>Contactez-nous</h2>
-      <form class="contact-form" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
-        
-        <input type="text" id="nom" name="Nom" placeholder="Votre Nom" required aria-label="Nom">
-        <input type="email" id="email" name="Email" placeholder="Votre Email" required aria-label="Email">
-        <input type="tel" id="telephone" name="Telephone" placeholder="Votre Téléphone" aria-label="Numéro de Téléphone">
-        <textarea id="message" name="Message" placeholder="Votre Message" rows="5" required aria-label="Message"></textarea>
-        
-        <input type="hidden" name="_honey" style="display:none;">
-
-        <button type="submit">Envoyer le Message</button>
-      </form>
+    <section class="page-banner bg-primary-ftscd text-white d-flex align-items-center justify-content-center">
+        <div class="container text-center py-5">
+            <h1 class="page-title display-4">Contactez-nous</h1>
+            <p class="lead">Nous sommes là pour répondre à vos questions et discuter de partenariats.</p>
+        </div>
     </section>
+
+    <section id="contact-details" class="section py-5 bg-light-ftscd">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Nos Coordonnées</h2>
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="info-card h-100">
+                        <i class="fas fa-map-marker-alt fa-3x text-accent-ftscd mb-3"></i>
+                        <h3>Adresse du Siège</h3>
+                        <p class="text-muted">Lomé, Quartier X (Adresse détaillée à insérer)</p>
+                        <p class="small text-secondary">Togo, Afrique de l'Ouest</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="info-card h-100">
+                        <i class="fas fa-envelope fa-3x text-accent-ftscd mb-3"></i>
+                        <h3>Email</h3>
+                        <p class="text-muted">info@ftscd.org</p>
+                        <p class="small text-secondary">Pour toutes demandes générales ou partenariats.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="info-card h-100">
+                        <i class="fas fa-phone-alt fa-3x text-accent-ftscd mb-3"></i>
+                        <h3>Téléphone</h3>
+                        <p class="text-muted">+228 XXXXXXXX</p>
+                        <p class="small text-secondary">Appelez nos bureaux pendant les heures de travail.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form-map" class="section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5">
+              <h2 class="section-title-left mb-4">Envoyez-nous un Message</h2>
+              <p class="mb-4">Utilisez le formulaire ci-dessous pour nous contacter rapidement. Nous vous répondrons dans les plus brefs délais.</p>
+              
+              <form class="contact-form" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
+                  <div class="mb-3">
+                      <input type="text" id="nom" name="Nom" class="form-control form-control-ftscd" placeholder="Votre Nom et Prénom" required aria-label="Nom">
+                  </div>
+                  <div class="mb-3">
+                      <input type="email" id="email" name="Email" class="form-control form-control-ftscd" placeholder="Votre Email" required aria-label="Email">
+                  </div>
+                  <div class="mb-3">
+                      <input type="tel" id="telephone" name="Telephone" class="form-control form-control-ftscd" placeholder="Votre Téléphone" aria-label="Numéro de Téléphone">
+                  </div>
+                  <div class="mb-3">
+                      <textarea id="message" name="Message" class="form-control form-control-ftscd" placeholder="Votre Message" rows="5" required aria-label="Message"></textarea>
+                  </div>
+                  
+                  <input type="hidden" name="_honey" style="display:none;">
+                  <input type="hidden" name="_next" value="https://votre-site.com/merci.html"> <input type="hidden" name="_subject" value="Nouveau message FTSCD depuis le site web">
+
+                  <button type="submit" class="btn btn-primary-ftscd w-100">Envoyer le Message <i class="fas fa-paper-plane ms-2"></i></button>
+              </form>
+          </div>
+
+          <div class="col-lg-6">
+              <h2 class="section-title-left mb-4">Où nous trouver</h2>
+              <div id="map" style="height: 400px; border-radius: 10px; box-shadow: var(--shadow-subtle);">
+                  <p class="text-center text-muted mt-5">Intégration de la carte (Leaflet/Google Maps) à cet emplacement.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </div>  
 
-<footer class="site-footer bg-dark text-white py-4">
-    <div class="container text-center">
+<footer class="site-footer bg-dark-ftscd text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">À Propos du FTSCD</h5>
+          <p class="text-secondary-ftscd">
+            Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau d'associations engagées pour la démocratie et la bonne gouvernance au Togo.
+          </p>
+          <div class="social-icons mt-3">
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="list-unstyled footer-list">
+            <li><a href="index.html" class="text-secondary-ftscd text-decoration-none">Accueil</a></li>
+            <li><a href="apropos.html" class="text-secondary-ftscd text-decoration-none">Qui sommes-nous ?</a></li>
+            <li><a href="nosActivites.html" class="text-secondary-ftscd text-decoration-none">Nos Projets</a></li>
+            <li><a href="rapportActivites.html" class="text-secondary-ftscd text-decoration-none">Rapports</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Contact Rapide</h5>
+          <address class="text-secondary-ftscd">
+            <p><i class="fas fa-map-marker-alt me-2"></i> Lomé, Togo (Adresse exacte à insérer)</p>
+            <p><i class="fas fa-envelope me-2"></i> info@ftscd.org (Exemple)</p>
+            <p><i class="fas fa-phone me-2"></i> +228 XXXXXXXX</p>
+            <a href="contact.html" class="btn btn-sm btn-outline-secondary-ftscd mt-2">Nous Contacter</a>
+          </address>
+        </div>
+      </div>
+      <hr class="my-4 text-white-50">
+      <div class="text-center small">
         <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
-        <p class="mb-0">Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" rel="noopener noreferrer" class="text-info">Sheerslab</a></p>
+        <p class="mb-0">Design & Développement par <a href="https://wa.me/22891983377" target="_blank" rel="noopener noreferrer" class="text-info text-decoration-none">SheerLab</a></p>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nE..."></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/main.js"></script>
-
+  <script>
+    // Initialisation de la carte Leaflet (exemple simple)
+    // REMPLACER LES COORDONNÉES PAR CELLES DE VOTRE SIÈGE
+    var map = L.map('map').setView([6.1314, 1.2222], 13); // Coordonnées de Lomé
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    L.marker([6.1314, 1.2222]).addTo(map)
+        .bindPopup('Siège FTSCD')
+        .openPopup();
+  </script>
 </body>
 </html>

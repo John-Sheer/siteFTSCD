@@ -15,14 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CDQ6P/6Kk4B4X/B/047C6X6yJ516K/3A+c5k0J7t9M7l/kGf9g1w1w1w1w1w" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css"> 
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJ"
-        crossorigin=""/>
 </head>
 <body>
-<header class="main-header">
+<header class="main-header sticky-top">
     <div class="logo">
         <a href="index.html">
             <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
@@ -48,70 +45,152 @@
                     <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
                 </ul>
             </li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html" class="btn btn-outline-primary-ftscd d-none d-lg-inline-block ms-3">CONTACT</a></li>
         </ul>
     </nav>
 </header>
   
   <div class="main-container">
-    <section id="mediatheque-contenu" class="section">
-      <h1>Médiathèque</h1>
-      <hr>
+    <section class="page-banner bg-primary-ftscd text-white d-flex align-items-center justify-content-center">
+        <div class="container text-center py-5">
+            <h1 class="page-title display-4">Médiathèque du FTSCD</h1>
+            <p class="lead">Nos réalisations en images, vidéos et dans la presse.</p>
+        </div>
+    </section>
 
-      <section id="images" class="media-category">
-        <h2>Images</h2>
-        <p>Retrouvez ici les photos de nos événements et activités.</p>
-        </section>
+    <section id="mediatheque-tabs" class="section py-5">
+      <div class="container">
+          <ul class="nav nav-pills nav-fill mb-5" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-images-tab" data-bs-toggle="pill" data-bs-target="#pills-images" type="button" role="tab" aria-controls="pills-images" aria-selected="true"><i class="fas fa-image me-2"></i> Images</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-videos-tab" data-bs-toggle="pill" data-bs-target="#pills-videos" type="button" role="tab" aria-controls="pills-videos" aria-selected="false"><i class="fas fa-video me-2"></i> Vidéos</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-articles-tab" data-bs-toggle="pill" data-bs-target="#pills-articles" type="button" role="tab" aria-controls="pills-articles" aria-selected="false"><i class="fas fa-newspaper me-2"></i> Articles de Presse</button>
+              </li>
+          </ul>
 
-      <section id="videos" class="media-category">
-        <h2>Vidéos</h2>
-        <p>Découvrez nos actions en vidéo.</p>
-        </section>
+          <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-images" role="tabpanel" aria-labelledby="pills-images-tab">
+                  <h2 class="section-title text-center mb-5" id="images">Galerie Photo</h2>
+                  <div class="row g-4">
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                          <div class="image-gallery-item rounded-lg overflow-hidden shadow-sm">
+                              <img src="media/images/Activ1.png" alt="Activité de formation" class="img-fluid w-100 h-100 object-fit-cover" style="height: 200px;">
+                              <div class="overlay-text text-white p-2">Formation des leaders</div>
+                          </div>
+                      </div>
+                       <div class="col-lg-3 col-md-4 col-sm-6">
+                          <div class="image-gallery-item rounded-lg overflow-hidden shadow-sm">
+                              <img src="media/images/Acti1.png" alt="Activité de formation" class="img-fluid w-100 h-100 object-fit-cover" style="height: 200px;">
+                              <div class="overlay-text text-white p-2">Séminaire de gouvernance</div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                          <div class="image-gallery-item rounded-lg overflow-hidden shadow-sm">
+                              <img src="media/images/Activ3.png" alt="Activité de formation" class="img-fluid w-100 h-100 object-fit-cover" style="height: 200px;">
+                              <div class="overlay-text text-white p-2">Plaidoyer citoyen</div>
+                          </div>
+                      </div>
+                      </div>
+              </div>
 
-      <section id="coupures-presse" class="media-category">
-        <h2>Coupures de presse</h2>
-        <p>Aperçu des mentions de presse sur nos travaux.</p>
-        </section>
+              <div class="tab-pane fade" id="pills-videos" role="tabpanel" aria-labelledby="pills-videos-tab">
+                  <h2 class="section-title text-center mb-5" id="videos">Vidéos de nos Événements</h2>
+                  <div class="row justify-content-center">
+                      <div class="col-lg-8 mb-4">
+                          <div class="ratio ratio-16x9 shadow-lg rounded-lg">
+                              <iframe src="https://www.youtube.com/embed/votre_code_youtube" title="Vidéo FTSCD" allowfullscreen></iframe>
+                          </div>
+                          <p class="text-center mt-3 text-muted">Titre de la vidéo : Présentation de notre impact 2023.</p>
+                      </div>
+                      </div>
+              </div>
 
-      <section id="articles-presse" class="media-category">
-        <h2>Articles de presse</h2>
-        <table class="table-styled">
-            <thead>
-                <tr>
-                    <th>Source</th>
-                    <th>Titre de l'Article</th>
-                    <th>Date de Publication</th>
-                    <th>Lire l'article</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Togotimes</td>
-                    <td><strong>Sécurité des pipelines:</strong> La Chine et le Niger en synergie pour la protection des infrastructures critiques.</td>
-                    <td>13 février 2025</td>
-                    <td><a href="https://togotimes.info/securiser-le-pipeline-strategique-la-chine-et-le-niger-en-synergie/" target="_blank" class="read-more">Lire l'article</a></td>
-                </tr>
-                <tr>
-                    <td>Togoscoop</td>
-                    <td><strong>Un maître coranique condamné pour escroquerie:</strong> Une affaire qui fait débat dans la région.</td>
-                    <td>13 février 2025</td>
-                    <td><a href="https://togoscoop.tg/cote-divoire-un-maitre-coranique-condamne-pour-escroquerie-apres-une-promesse-de-multiplication-dargent/" target="_blank" class="read-more">Lire l'article</a></td>
-                </tr>
-                </tbody>
-        </table>
-      </section>
+              <div class="tab-pane fade" id="pills-articles" role="tabpanel" aria-labelledby="pills-articles-tab">
+                  <h2 class="section-title text-center mb-5" id="articles-presse">Articles et Coupures de Presse</h2>
+                  <div class="table-responsive">
+                      <table class="table table-striped table-hover align-middle press-table shadow-sm rounded-lg">
+                          <thead class="bg-primary-ftscd text-white">
+                              <tr>
+                                  <th>Source Média</th>
+                                  <th>Titre/Résumé de l'Article</th>
+                                  <th>Date de Publication</th>
+                                  <th>Lien</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>TogoTimes</td>
+                                  <td><strong>Sécuriser le pipeline stratégique:</strong> La Chine et le Niger en synergie.</td>
+                                  <td>15 février 2025</td>
+                                  <td><a href="https://togotimes.info/securiser-le-pipeline-strategique-la-chine-et-le-niger-en-synergie/" target="_blank" class="btn btn-sm btn-outline-secondary-ftscd">Lire l'article <i class="fas fa-external-link-alt ms-1"></i></a></td>
+                              </tr>
+                              <tr>
+                                  <td>Togoscoop</td>
+                                  <td><strong>Un maître coranique condamné pour escroquerie:</strong> Une affaire qui fait débat dans la région.</td>
+                                  <td>13 février 2025</td>
+                                  <td><a href="https://togoscoop.tg/cote-divoire-un-maitre-coranique-condamne-pour-escroquerie-apres-une-promesse-de-multiplication-dargent/" target="_blank" class="btn btn-sm btn-outline-secondary-ftscd">Lire l'article <i class="fas fa-external-link-alt ms-1"></i></a></td>
+                              </tr>
+                              <tr>
+                                  <td>Togo News</td>
+                                  <td><strong>Le FTSCD alerte sur la gouvernance locale:</strong> Nécessité de plus de transparence budgétaire.</td>
+                                  <td>05 Janvier 2024</td>
+                                  <td><a href="#" target="_blank" class="btn btn-sm btn-outline-secondary-ftscd">Lire l'article <i class="fas fa-external-link-alt ms-1"></i></a></td>
+                              </tr>
+                              </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
   </div>
 
-<footer class="site-footer bg-dark text-white py-4">
-    <div class="container text-center">
+<footer class="site-footer bg-dark-ftscd text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">À Propos du FTSCD</h5>
+          <p class="text-secondary-ftscd">
+            Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau d'associations engagées pour la démocratie et la bonne gouvernance au Togo.
+          </p>
+          <div class="social-icons mt-3">
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="list-unstyled footer-list">
+            <li><a href="index.html" class="text-secondary-ftscd text-decoration-none">Accueil</a></li>
+            <li><a href="apropos.html" class="text-secondary-ftscd text-decoration-none">Qui sommes-nous ?</a></li>
+            <li><a href="nosActivites.html" class="text-secondary-ftscd text-decoration-none">Nos Projets</a></li>
+            <li><a href="rapportActivites.html" class="text-secondary-ftscd text-decoration-none">Rapports</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Contact Rapide</h5>
+          <address class="text-secondary-ftscd">
+            <p><i class="fas fa-map-marker-alt me-2"></i> Lomé, Togo (Adresse exacte à insérer)</p>
+            <p><i class="fas fa-envelope me-2"></i> info@ftscd.org (Exemple)</p>
+            <p><i class="fas fa-phone me-2"></i> +228 XXXXXXXX</p>
+            <a href="contact.html" class="btn btn-sm btn-outline-secondary-ftscd mt-2">Nous Contacter</a>
+          </address>
+        </div>
+      </div>
+      <hr class="my-4 text-white-50">
+      <div class="text-center small">
         <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
-        <p class="mb-0">Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" rel="noopener noreferrer" class="text-info">Sheerslab</a></p>
+        <p class="mb-0">Design & Développement par <a href="https://wa.me/22891983377" target="_blank" rel="noopener noreferrer" class="text-info text-decoration-none">SheerLab</a></p>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/main.js"></script>
-
 </body>
 </html>

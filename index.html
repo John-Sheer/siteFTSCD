@@ -1,137 +1,226 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="SheerLab">
-    <meta name="keywords" content="FTSCD, Forum Togolais Société Civile Développement, Togo, Gouvernance, Citoyenneté, corruption, droits de l'homme, démocratie, paix, environnement">
-    <meta name="description" content="Le Forum Togolais de la Société Civile pour le Développement (FTSCD) œuvre pour la démocratie, la bonne gouvernance et les droits humains au Togo. Faits marquants 2022 et 2023.">
-    
-    <title>FTSCD - Accueil</title>
-    <link rel="icon" type="image/png" href="media/images/logo.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css"> 
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJ"
-        crossorigin=""/>
-</head>
-<body>
-<header class="main-header">
-    <div class="logo">
-        <a href="index.html">
-            <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
-        </a>
-    </div>
-    <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu de navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-    <nav class="navbar main-nav">
-        <ul class="nav-list">
-            <li><a href="index.html">ACCUEIL</a></li>
-            <li><a href="apropos.html">À PROPOS</a></li>
-            <li><a href="nosActivites.html">ACTIVITÉS</a></li>
-            <li><a href="rapportActivites.html">RAPPORTS D'ACTIVITÉS</a></li>
-            <li class="dropdown">
-                <a href="mediatheque.html" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">MÉDIAS</a>
-                <ul class="submenu">
-                    <li><a href="mediatheque.html#images">Images</a></li>
-                    <li><a href="mediatheque.html#videos">Vidéos</a></li>
-                    <li><a href="mediatheque.html#coupures-presse">Coupures de presse</a></li>
-                    <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">CONTACT</a></li>
-        </ul>
-    </nav>
-</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="SheerLab">
+  <meta name="keywords" content="FTSCD, Forum Togolais Société Civile Développement, Togo, Gouvernance, Citoyenneté, corruption, droits de l'homme, démocratie, paix, environnement">
+  <meta name="description" content="Le Forum Togolais de la Société Civile pour le Développement (FTSCD) œuvre pour la démocratie, la bonne gouvernance et les droits humains au Togo. Faits marquants 2022 et 2023.">
   
-  <div class="main-container">
-    <section class="hero">
-        <h1>Bâtir une Société Civile Forte pour le Développement du Togo</h1>
-        <p>Forum Togolais de la Société Civile pour le Développement (FTSCD) : Promouvoir la bonne gouvernance et les droits humains.</p>
-        <a href="rapportActivites.html" class="cta-button">Découvrir nos réalisations 2023</a>
-    </section>
+  <title>FTSCD - Accueil</title>
+  <link rel="icon" type="image/png" href="media/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CDQ6P/6Kk4B4X/B/047C6X6yJ516K/3A+c5k0J7t9M7l/kGf9g1w1w1w1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".main-nav" data-bs-offset="100">
 
-    <section id="apropos" class="section">
-        <h2>Notre Mission</h2>
-        <p>Le FTSCD œuvre pour la démocratie, la bonne gouvernance et les droits humains au Togo. Nous sommes engagés pour un développement durable et inclusif en renforçant la participation citoyenne aux processus de décision.</p>
-    </section>
-
-    <section id="faits-marquants" class="section bg-light">
-        <h2>Faits Marquants (2022 - 2023)</h2>
-        <div class="news-list">
-            <article class="news-item">
-                <h3>2023 : Formation Jeunesse</h3>
-                <p>Plus de <strong>350 jeunes leaders</strong> formés aux outils numériques pour le plaidoyer et la mobilisation sociale dans la région Maritime et des Savanes.</p>
-                <a href="rapportActivites.html" class="read-more">Lire le rapport 2023</a>
-            </article>
-            <article class="news-item">
-                <h3>2022 : Transparence Budgétaire</h3>
-                <p>Lancement réussi du projet de <strong>surveillance citoyenne</strong> des budgets publics, entraînant un dialogue accru avec les autorités locales.</p>
-                <a href="rapportActivites.html" class="read-more">Lire le rapport 2022</a>
-            </article>
-            <article class="news-item">
-                <h3>Plaidoyer réussi</h3>
-                <p>Obtention de <strong>15 plateformes de dialogue</strong> citoyen-décideurs mises en place dans 5 régions pour une meilleure gouvernance locale.</p>
-                <a href="nosActivites.html" class="read-more">Voir nos activités</a>
-            </article>
-        </div>
-    </section>
-
-<section id="contact" class="section" style="text-align: center"> 
-      <h2>Contactez-nous</h2>
-      <form class="contact-form" action="https://formsubmit.co/meskojohn@gmail.com" method="POST">
-        <input type="text" name="Nom" placeholder="Votre Nom" required>
-        <input type="email" name="Email" placeholder="Votre Email" required>
-        <input type="tel" name="Telephone" placeholder="Votre Numéro de Téléphone (optionnel)">
-        <textarea name="Message" placeholder="Votre Message" rows="5" required></textarea>
-        
-        <input type="hidden" name="_honey" style="display:none;">
-
-        <button type="submit">Envoyer le Message</button>
-      </form>
-    </section>
-
+<header class="main-header sticky-top">
+  <div class="logo">
+    <a href="index.html">
+      <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
+    </a>
   </div>
+  <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu de navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  <nav class="navbar main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">ACCUEIL</a></li>
+      <li><a href="apropos.html">À PROPOS</a></li>
+      <li><a href="nosActivites.html">ACTIVITÉS</a></li>
+      <li><a href="rapportActivites.html">RAPPORTS D'ACTIVITÉS</a></li>
+      <li class="dropdown">
+        <a href="mediatheque.html" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">MÉDIAS</a>
+        <ul class="submenu">
+          <li><a href="mediatheque.html#images">Images</a></li>
+          <li><a href="mediatheque.html#videos">Vidéos</a></li>
+          <li><a href="mediatheque.html#coupures-presse">Coupures de presse</a></li>
+          <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="btn btn-outline-primary-ftscd d-none d-lg-inline-block ms-3">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
 
-<footer class="site-footer bg-dark text-white py-4">
-    <div class="container text-center">
-        <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
-        <p class="mb-0">Propulsé par <a href="#" data-bs-toggle="modal" data-bs-target="#sheerslabModal" class="text-info">Sheerslab</a></p>
+<div class="main-container">
+  <section class="hero-section">
+    <div id="hero-carousel"
+         class="carousel slide carousel-fade"
+         data-bs-ride="carousel"
+         data-bs-interval="4000"
+         data-bs-pause="hover">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="hero-slide">
+            <img src="media/images/Activ1.png" class="d-block w-100 carousel-img" alt="Activité 1">
+            <div class="black-overlay"></div>
+            <div class="hero-overlay">
+              <h1 class="hero-title">Bâtir une Société Civile Forte pour le Développement du Togo</h1>
+              <p class="hero-subtitle">Promouvoir la démocratie, la bonne gouvernance et les droits humains.</p>
+              <a href="apropos.html" class="btn btn-primary-ftscd mt-3">Découvrir notre Mission <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide">
+            <img src="media/images/Acti1.png" class="d-block w-100 carousel-img" alt="Activité 2">
+            <div class="black-overlay"></div>
+            <div class="hero-overlay">
+              <h1 class="hero-title">Engagement Citoyen pour un Togo Transparent et Juste</h1>
+              <p class="hero-subtitle">Nos actions pour la lutte contre la corruption et la participation citoyenne.</p>
+              <a href="nosActivites.html" class="btn btn-primary-ftscd mt-3">Voir nos Projets <i class="fas fa-cogs ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="hero-slide">
+            <img src="media/images/Activ3.png" class="d-block w-100 carousel-img" alt="Activité 3">
+            <div class="black-overlay"></div>
+            <div class="hero-overlay">
+              <h1 class="hero-title">Renforcement des Capacités des Acteurs de la Société Civile</h1>
+              <p class="hero-subtitle">Former les leaders de demain pour un impact durable.</p>
+              <a href="contact.html" class="btn btn-primary-ftscd mt-3">Nous Rejoindre <i class="fas fa-handshake ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button>
     </div>
-  </footer>
+  </section>
 
-    <div class="modal fade" id="sheerslabModal" tabindex="-1" aria-labelledby="sheerslabModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="sheerslabModalLabel">SheersLab</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <section id="apercu-mission" class="section py-5 bg-light-ftscd">
+    <div class="container">
+        <h2 class="text-center mb-5 section-title">Notre Engagement en Action</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-handshake fa-3x text-primary-ftscd mb-3"></i>
+                    <h3>Mission</h3>
+                    <p>Renforcer les capacités des OSC, plaider pour des réformes et sensibiliser à la citoyenneté responsable.</p>
+                    <a href="apropos.html" class="link-ftscd">Lire plus</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-chart-line fa-3x text-primary-ftscd mb-3"></i>
+                    <h3>Vision</h3>
+                    <p>Un Togo où la démocratie est florissante, les droits de l’homme respectés et la bonne gouvernance assurée.</p>
+                    <a href="apropos.html" class="link-ftscd">Lire plus</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-medal fa-3x text-primary-ftscd mb-3"></i>
+                    <h3>Valeurs</h3>
+                    <p>Engagement, Transparence, Solidarité et Innovation : les piliers de notre action quotidienne.</p>
+                    <a href="apropos.html#valeurs" class="link-ftscd">Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="actualites" class="section py-5">
+    <div class="container">
+      <h2 class="text-center mb-4 section-title">Derniers Faits Marquants</h2>
+      <p class="text-center mb-5 text-secondary">Aperçu de nos réalisations récentes en faveur de la société civile togolaise.</p>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card activity-card">
+            <img src="media/images/Acti1.png" class="card-img-top" alt="Campagne de sensibilisation">
+            <div class="card-body">
+              <h5 class="card-title">Lancement de la Campagne Anti-Corruption 2023</h5>
+              <p class="card-text small text-muted"><i class="far fa-calendar-alt"></i> 15 Déc. 2023</p>
+              <p class="card-text">Le FTSCD a lancé une initiative nationale pour évaluer l'indice de transparence des services publics...</p>
+              <a href="nosActivites.html#detail1" class="btn btn-outline-secondary-ftscd">En savoir plus</a>
+            </div>
           </div>
-          <div class="modal-body">
-            <p>Contactez SheersLab sur :</p>
-            <p><strong>Téléphone :</strong> +228 91983377 / 98983377</p>
-            <p><strong>Email :</strong> contact@sheerslab.com</p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card activity-card">
+            <img src="media/images/Activ3.png" class="card-img-top" alt="Formation de jeunes leaders">
+            <div class="card-body">
+              <h5 class="card-title">Formation des Jeunes Leaders pour la Démocratie</h5>
+              <p class="card-text small text-muted"><i class="far fa-calendar-alt"></i> 22 Oct. 2023</p>
+              <p class="card-text">Plus de 50 jeunes ont été formés aux techniques de plaidoyer et de monitoring électoral...</p>
+              <a href="nosActivites.html#detail2" class="btn btn-outline-secondary-ftscd">En savoir plus</a>
+            </div>
           </div>
-          <div class="modal-footer">
-            <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" class="btn btn-success">Contacter par WhatsApp</a>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card activity-card">
+            <img src="media/images/Activ1.png" class="card-img-top" alt="Dialogue intergénérationnel">
+            <div class="card-body">
+              <h5 class="card-title">Dialogue National sur la Paix et l'Environnement</h5>
+              <p class="card-text small text-muted"><i class="far fa-calendar-alt"></i> 01 Sept. 2023</p>
+              <p class="card-text">Une rencontre fructueuse entre les communautés locales et les autorités sur la gestion durable...</p>
+              <a href="nosActivites.html#detail3" class="btn btn-outline-secondary-ftscd">En savoir plus</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/main.js"></script>
-  
-</body>
+  </section>
+</div>
+
+<footer class="site-footer bg-dark-ftscd text-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-title">À Propos du FTSCD</h5>
+        <p class="text-secondary-ftscd">
+          Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau d'associations engagées pour la démocratie et la bonne gouvernance au Togo.
+        </p>
+        <div class="social-icons mt-3">
+            <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white-50 me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-title">Navigation</h5>
+        <ul class="list-unstyled footer-list">
+          <li><a href="index.html" class="text-secondary-ftscd text-decoration-none">Accueil</a></li>
+          <li><a href="apropos.html" class="text-secondary-ftscd text-decoration-none">Qui sommes-nous ?</a></li>
+          <li><a href="nosActivites.html" class="text-secondary-ftscd text-decoration-none">Nos Projets</a></li>
+          <li><a href="rapportActivites.html" class="text-secondary-ftscd text-decoration-none">Rapports</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="footer-title">Contact Rapide</h5>
+        <address class="text-secondary-ftscd">
+          <p><i class="fas fa-map-marker-alt me-2"></i> Lomé, Togo (Adresse exacte à insérer)</p>
+          <p><i class="fas fa-envelope me-2"></i> info@ftscd.org (Exemple)</p>
+          <p><i class="fas fa-phone me-2"></i> +228 XXXXXXXX</p>
+          <a href="contact.html" class="btn btn-sm btn-outline-secondary-ftscd mt-2">Nous Contacter</a>
+        </address>
+      </div>
+    </div>
+    <hr class="my-4 text-white-50">
+    <div class="text-center small">
+      <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
+      <p class="mb-0">Design & Développement par <a href="https://wa.me/22891983377" target="_blank" rel="noopener noreferrer" class="text-info text-decoration-none">SheerLab</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script> </body>
 </html>

@@ -15,14 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMD/CDQ6P/6Kk4B4X/B/047C6X6yJ516K/3A+c5k0J7t9M7l/kGf9g1w1w1w1w1w" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/styles.css"> 
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJ"
-        crossorigin=""/>
 </head>
 <body>
-<header class="main-header">
+<header class="main-header sticky-top">
     <div class="logo">
         <a href="index.html">
             <img src="media/images/logo.png" alt="Logo FTSCD" style="height: 50px;">
@@ -48,86 +45,148 @@
                     <li><a href="mediatheque.html#articles-presse">Articles de presse</a></li>
                 </ul>
             </li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="contact.html" class="btn btn-outline-primary-ftscd d-none d-lg-inline-block ms-3">CONTACT</a></li>
         </ul>
     </nav>
 </header>
   
   <div class="main-container">
-    <section id="activites-principales" class="section">
-      <h1>Nos Activités Principales</h1>
-      <hr>
+    <section class="page-banner bg-primary-ftscd text-white d-flex align-items-center justify-content-center">
+        <div class="container text-center py-5">
+            <h1 class="page-title display-4">Nos Activités et Projets</h1>
+            <p class="lead">Découvrez les axes d'intervention clés du FTSCD pour le développement du Togo.</p>
+        </div>
+    </section>
 
-      <div class="activity-box">
-        <div class="image-box"><img src="media/images/Activ1.png" alt="image plaidoyer"></div>
-        <div class="text-box">
-          <h2>Plaidoyer et Réformes</h2>
-          <p>Le FTSCD est activement impliqué dans les actions de plaidoyer auprès des autorités publiques et des partenaires techniques et financiers. Nos objectifs sont :</p>
-          <ul>
-            <li>Obtenir l'adoption de lois plus justes et transparentes.</li>
-            <li>Promouvoir la participation citoyenne aux processus décisionnels.</li>
-            <li>Lutter contre la corruption et l'impunité.</li>
-          </ul>
+    <section id="plaidoyer" class="section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">1. Plaidoyer et Surveillance de la Gouvernance</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4">
+            <img src="media/images/Activ1.png" alt="Image Plaidoyer" class="img-fluid rounded-lg shadow-sm">
+          </div>
+          <div class="col-lg-6 mb-4">
+            <p>Notre engagement premier est de promouvoir une **gouvernance transparente** et responsable. Nous menons des actions de plaidoyer auprès des autorités nationales et locales pour l'adoption et l'application de réformes démocratiques et de lutte contre la corruption.</p>
+            
+            <h4 class="text-primary-ftscd mt-4"><i class="fas fa-lightbulb me-2"></i> Nos initiatives clés :</h4>
+            <ul class="impact-list">
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Publication de rapports d'évaluation de l'indice de transparence.</li>
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Organisation de conférences de presse et de débats publics sur les enjeux nationaux.</li>
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Participation aux cadres de concertation État/Société Civile.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <br>
+    </section>
 
-      <div class="activity-box reverse">
-        <div class="image-box"><img src="media/images/Activ2.png" alt="image formation"></div>
-        <div class="text-box">
-          <h2>Renforcement de Capacités</h2>
-          <p>Nous organisons régulièrement des sessions de formation et des ateliers pour divers acteurs :</p>
-          <ul>
-            <li>Organisations de la société civile (OSC).</li>
-            <li>Jeunes leaders et étudiants (plus de 350 formés en 2023).</li>
-            <li>Médias et journalistes.</li>
-            <li>Élus locaux et agents de l’administration publique.</li>
-          </ul>
+    <section id="formation" class="section py-5 bg-light-ftscd">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">2. Formation et Renforcement des Capacités</h2>
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6 mb-4">
+            <img src="media/images/Activ3.png" alt="Image Formation" class="img-fluid rounded-lg shadow-sm">
+          </div>
+          <div class="col-lg-6 mb-4">
+            <p>Le renforcement des capacités est au cœur de notre stratégie pour bâtir une société civile efficace. Nous formons les leaders et les acteurs de développement aux outils modernes de gestion, de plaidoyer et d'évaluation de projets.</p>
+            
+            <h4 class="text-primary-ftscd mt-4"><i class="fas fa-graduation-cap me-2"></i> Thématiques couvertes :</h4>
+            <ul class="impact-list">
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Techniques de suivi budgétaire et de redevabilité.</li>
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Gestion de projets et recherche de financement.</li>
+              <li><i class="fas fa-check-circle text-accent-ftscd me-2"></i> Droit humains, démocratie et citoyenneté active.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <br>
-
-      <div class="activity-box">
-        <div class="image-box"><img src="media/images/Activ3.png" alt="image sensibilisation"></div>
-        <div class="text-box">
-          <h2>Sensibilisation et Citoyenneté</h2>
-          <p>Nous menons des campagnes de sensibilisation à travers le pays pour informer et éduquer la population sur :</p>
-          <ul>
-            <li>Les droits de l'homme et les libertés fondamentales.</li>
-            <li>L'importance de la participation aux élections et à la vie publique.</li>
-            <li>Des programmes d'éducation civique pour renforcer la culture de la bonne gouvernance au sein de la population.</li>
-          </ul>
+    </section>
+    
+    <section id="chiffres-cles" class="section py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Notre Impact en Chiffres (2022-2023)</h2>
+        <p class="text-center lead text-muted mb-4">Grâce à nos actions, nous avons obtenu les résultats clés suivants :</p>
+        
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="info-card h-100">
+                    <i class="fas fa-users fa-3x text-primary-ftscd mb-3"></i>
+                    <h3 class="display-5 fw-bold text-dark">350+</h3>
+                    <p class="text-muted">Acteurs formés (Plaidoyer & Budgétaire)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="info-card h-100">
+                    <i class="fas fa-comments fa-3x text-primary-ftscd mb-3"></i>
+                    <h3 class="display-5 fw-bold text-dark">15</h3>
+                    <p class="text-muted">Plateformes de dialogue citoyen-décideurs</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="info-card h-100">
+                    <i class="fas fa-file-alt fa-3x text-primary-ftscd mb-3"></i>
+                    <h3 class="display-5 fw-bold text-dark">3</h3>
+                    <p class="text-muted">Rapports thématiques majeurs publiés</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="info-card h-100">
+                    <i class="fas fa-bullhorn fa-3x text-primary-ftscd mb-3"></i>
+                    <h3 class="display-5 fw-bold text-dark">5 000+</h3>
+                    <p class="text-muted">Citoyens sensibilisés (Droits humains)</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <br>
-      
-      <div class="activity-box reverse">
-        <div class="image-box"><img src="media/images/Activ4.png" alt="image impact"></div> 
-        <div class="text-box">
-          <h2>NOTRE IMPACT (2022 - 2023)</h2>
-          <p>Les deux dernières années ont marqué un tournant dans l'engagement citoyen au Togo. Grâce à l'implication de nos partenaires et de nos équipes, nous avons obtenu les résultats clés suivants :</p>
-          <ul>
-              <li>**+350** Acteurs de la société civile formés aux techniques de suivi budgétaire et de plaidoyer (2023).</li>
-              <li>**15** Plateformes de dialogue citoyen-décideurs mises en place dans 5 régions.</li>
-              <li>**3** Rapports thématiques publiés sur la gouvernance locale et la transparence (2022 & 2023).</li>
-              <li>**5 000+** Citoyens sensibilisés aux droits humains et à l'accès à l'information via nos campagnes mobiles.</li>
-          </ul>
-          <p><a href="rapportActivites.html" class="cta-button">Lire les rapports détaillés 2022 & 2023</a></p>
+
+        <div class="text-center mt-5">
+            <a href="rapportActivites.html" class="btn btn-primary-ftscd btn-lg">
+                Lire les Rapports Détaillés <i class="fas fa-arrow-right ms-2"></i>
+            </a>
         </div>
       </div>
     </section>
   </div>  
 
-<footer class="site-footer bg-dark text-white py-4">
-    <div class="container text-center">
+<footer class="site-footer bg-dark-ftscd text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">À Propos du FTSCD</h5>
+          <p class="text-secondary-ftscd">
+            Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau d'associations engagées pour la démocratie et la bonne gouvernance au Togo.
+          </p>
+          <div class="social-icons mt-3">
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white-50 me-3"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Navigation</h5>
+          <ul class="list-unstyled footer-list">
+            <li><a href="index.html" class="text-secondary-ftscd text-decoration-none">Accueil</a></li>
+            <li><a href="apropos.html" class="text-secondary-ftscd text-decoration-none">Qui sommes-nous ?</a></li>
+            <li><a href="nosActivites.html" class="text-secondary-ftscd text-decoration-none">Nos Projets</a></li>
+            <li><a href="rapportActivites.html" class="text-secondary-ftscd text-decoration-none">Rapports</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-title">Contact Rapide</h5>
+          <address class="text-secondary-ftscd">
+            <p><i class="fas fa-map-marker-alt me-2"></i> Lomé, Togo (Adresse exacte à insérer)</p>
+            <p><i class="fas fa-envelope me-2"></i> info@ftscd.org (Exemple)</p>
+            <p><i class="fas fa-phone me-2"></i> +228 XXXXXXXX</p>
+            <a href="contact.html" class="btn btn-sm btn-outline-secondary-ftscd mt-2">Nous Contacter</a>
+          </address>
+        </div>
+      </div>
+      <hr class="my-4 text-white-50">
+      <div class="text-center small">
         <p class="mb-1">&copy; 2025 FTSCD | Tous droits réservés.</p>
-        <p class="mb-0">Propulsé par <a href="https://wa.me/22891983377?text=Bienvenu%20%C3%A0%20Sheerlab%2C%20Laissez%20un%20message%20et%20nous%20contacterons" target="_blank" rel="noopener noreferrer" class="text-info">Sheerslab</a></p>
+        <p class="mb-0">Design & Développement par <a href="https://wa.me/22891983377" target="_blank" rel="noopener noreferrer" class="text-info text-decoration-none">SheerLab</a></p>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/main.js"></script>
-
 </body>
 </html>
