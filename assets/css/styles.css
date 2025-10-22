@@ -113,6 +113,8 @@ h1, h2, h3, h4 {
     border-color: var(--color-accent);
 }
 
+
+
 .dropdown-toggle {
     cursor: pointer;
 }
@@ -528,7 +530,7 @@ h1, h2, h3, h4 {
 
 /* 
 =====================================
-  4. Styles spécifiques aux scripts JS
+  Styles spécifiques aux scripts JS
 =====================================
 */
 
@@ -600,7 +602,7 @@ STYLE DE LA BARRE DE RECHERCHE AJUSTÉE
     height: 25px; 
     padding: 3px 0; 
     font-size: 0.9rem; 
-    color: #ffffff;   
+    color: #a19f9f;   
     border: none; 
     background: transparent; 
     outline: none; 
@@ -608,16 +610,31 @@ STYLE DE LA BARRE DE RECHERCHE AJUSTÉE
 }
 
 #champ-recherche::placeholder {
-    color: #b0b0b0; 
+    color: #918c8c; 
+}
+
+.Card:focus-within #champ-recherche {
+    /* Mettez une couleur foncée pour contraster avec le fond blanc */
+    color: #333333; 
 }
 
 /* Effet FOCUS stylé */
 .Card:focus-within {
-    /* Bordure et ombre accentuées */
     border-color: #32a02e; 
     box-shadow: 0 4px 15px rgba(50, 160, 46, 0.45); 
-    
-    /* Changement de fond et léger soulèvement */
     transform: translateY(-2px); 
     background-color: #ffffff; 
+}
+
+/* ... Styles pour les esultats de recherche... */
+.Resultats {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    position: absolute; /* IMPORTANT pour le positionnement */
+    z-index: 10;
+    background-color: #ffffff; /* Pour contraster avec le texte */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Doit être caché initialement */
 }

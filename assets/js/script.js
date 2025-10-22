@@ -234,9 +234,9 @@ function initLeafletMap() {
     }
 }
 
-// ===========================================
+// =============================================================
 // DÉMARRAGE DU SCRIPT PRINCIPAL (Un seul bloc DOMContentLoaded)
-// ===========================================
+// =============================================================
 
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -294,10 +294,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
- * Fonction pour charger et insérer un fichier HTML externe dans un élément cible.
- * (Fonction identique à la précédente)
+ * 1. Fonction pour charger et insérer un fichier HTML externe dans un élément cible.
+ * (Identique à celle fournie par l'utilisateur, avec ajout d'un callback)
  */
-function loadHTMLContent(url, elementId) {
+function loadHTMLContent(url, elementId, callback) {
     const targetElement = document.getElementById(elementId);
     
     if (!targetElement) {
@@ -314,16 +314,117 @@ function loadHTMLContent(url, elementId) {
         })
         .then(html => {
             targetElement.innerHTML = html;
+            // Étape clé : Exécuter la fonction d'initialisation APRES l'insertion du HTML
+            if (typeof callback === 'function') {
+                callback(); 
+            }
         })
         .catch(error => {
             console.error('Erreur lors de l\'intégration du contenu:', error);
         });
 }
 
-// ----------------------------------------------------------------------
-// MODIFICATION CLÉ : Charger le contenu de la barre de recherche (votre nouveau fichier)
-// dans le placeholder existant. 
-// ----------------------------------------------------------------------
-loadHTMLContent('includes/search-bar.html', 'search-bar-placeholder'); 
-// OU, si vous avez renommé le fichier :
-// loadHTMLContent('includes/search-bar.html', 'btnrec-placeholder');
+// -------------------------------------------------------------
+// 2. Fonction d'initialisation de l'autocomplétion
+// -------------------------------------------------------------
+
+function initializeAutocomplete() {
+    // Vérification de la présence des éléments DOM
+    const inputRecherche = document.getElementById('champ-recherche');
+    const listeResultats = document.getElementById('liste-resultats');
+
+    if (!inputRecherche || !listeResultats) {
+        // Cette erreur peut survenir si search-bar.html ne contient pas les IDs corrects
+        console.error("Erreur: Les IDs 'champ-recherche' ou 'liste-resultats' sont manquants.");
+        return;
+    }
+
+    // 💡 À ADAPTER : L'URL réelle de votre API de recherche FTSCD
+    // Cette API doit renvoyer un JSON de résultats basé sur le paramètre 'query'
+    const SEARCH_API_URL = '/api/ftscd/search?query='; 
+    
+    let timeoutId; // Pour gérer le "Debounce" (optimisation)
+
+    /**
+     * Effectue l'appel à l'API de recherche FTSCD et affiche les résultats.
+     */
+    function afficherResultats(termeRecherche) {
+        listeResultats.innerHTML = '';
+
+        // N'exécute la recherche que si le terme a au moins 3 caractères
+        if (termeRecherche.length < 3) {
+            listeResultats.style.display = 'none';
+            return;
+        }
+
+        // Construction de l'URL d'appel sécurisée
+        const apiUrl = SEARCH_API_URL + encodeURIComponent(termeRecherche);
+
+        // Appel AJAX (fetch) à l'API du site
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    // Gérer les erreurs HTTP (404, 500, etc.)
+                    throw new Error('Erreur réseau ou API: ' + response.statusText);
+                }
+                return response.json(); 
+            })
+            .then(resultats => {
+                listeResultats.innerHTML = ''; // Nettoyer avant d'insérer
+                
+                if (resultats && resultats.length > 0) {
+                    resultats.forEach(resultat => {
+                        const item = document.createElement('li');
+                        
+                        // Assurez-vous que votre API retourne { title, url }
+                        item.innerHTML = `
+                            <a href="${resultat.url}">
+                                <strong>${resultat.title}</strong>
+                                <br><small>${resultat.url}</small>
+                            </a>
+                        `;
+                        
+                        listeResultats.appendChild(item);
+                    });
+                    listeResultats.style.display = 'block'; 
+                } else {
+                    const noResult = document.createElement('li');
+                    noResult.textContent = `Aucun résultat trouvé pour "${termeRecherche}".`;
+                    listeResultats.appendChild(noResult);
+                    listeResultats.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur lors de la recherche:', error);
+                // Afficher un message d'erreur à l'utilisateur
+                listeResultats.innerHTML = '<li style="color: red;">Erreur de connexion au service de recherche.</li>';
+                listeResultats.style.display = 'block';
+            });
+    }
+
+    // Écoute des frappes de l'utilisateur avec DEBOUNCE
+    inputRecherche.addEventListener('input', (e) => {
+        // Annule le timer précédent si l'utilisateur tape rapidement
+        clearTimeout(timeoutId); 
+        
+        // Définit un nouveau timer pour exécuter la recherche après 300ms
+        timeoutId = setTimeout(() => {
+            afficherResultats(e.target.value.trim());
+        }, 300); 
+    });
+
+    // Cacher les résultats lorsque l'utilisateur clique en dehors de la zone
+    document.addEventListener('click', (e) => {
+        const isClickInsideCard = e.target.closest('.Card');
+        if (!isClickInsideCard) {
+            listeResultats.style.display = 'none';
+        }
+    });
+}
+
+// -------------------------------------------------------------
+// 3. APPEL PRINCIPAL
+// -------------------------------------------------------------
+
+// Lance le chargement du HTML, puis exécute initializeAutocomplete
+loadHTMLContent('includes/search-bar.html', 'search-bar-placeholder', initializeAutocomplete);
