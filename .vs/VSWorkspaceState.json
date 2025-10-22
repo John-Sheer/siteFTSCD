@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
+=======
+    "",
+    "\\assets",
+    "\\assets\\css"
+>>>>>>> db362ab761680cfd0e5cfe0a5e917b5c0a85257f
   ],
   "PreviewInSolutionExplorer": false
 }

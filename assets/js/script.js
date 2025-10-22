@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Fichier : assets/js/script.js
  * Rôle : Gérer l'interaction du menu, l'état du header et les améliorations dynamiques.
@@ -327,3 +328,5 @@ function loadHTMLContent(url, elementId) {
 loadHTMLContent('includes/search-bar.html', 'search-bar-placeholder'); 
 // OU, si vous avez renommé le fichier :
 // loadHTMLContent('includes/search-bar.html', 'btnrec-placeholder');
+=======
+>>>>>>> db362ab761680cfd0e5cfe0a5e917b5c0a85257f

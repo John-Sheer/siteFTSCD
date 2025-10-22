@@ -32,56 +32,82 @@
 
 <div id="search-bar-placeholder"></div>
 
-    <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu de navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
-    <nav class="navbar main-nav">
-
-<div id="navbar-placeholder"></div>
-
+ <!-- Barre de navigation -->
+<header class="navbar">
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html" class="btn-login">ACCUEIL</a></li>
+      <li><a href="apropos.html" class="btn-login">À PROPOS</a></li>
+      <li><a href="nosActivites.html" class="btn-login">ACTIVITÉS</a></li>
+      <li><a href="rapportActivites.html" class="btn-login">RAPPORTS D'ACTIVITÉS</a></li>
+          <li class="dropdown"><a href="mediatheque.html" class="btn-login">MÉDIAS</a>
+              <ul class="submenu">
+                  <li><a href="images.html">Images</a></li>
+                  <li><a href="videos.html">Vidéos</a></li>
+                  <li><a href="coupuresPresse.html">Coupures de presse</a></li>
+                  <li><a href="articlesPresse.html">Articles de presse</a></li>
+              </ul>
+          </li>
+      <li><a href="contact.html" class="btn-login">CONTACT</a></li>
+    </ul>
+  </nav>
 </header>
-  
-  <div class="main-container">
-    <section class="page-banner bg-primary-ftscd text-white d-flex align-items-center justify-content-center">
-        <div class="container text-center py-5">
-            <h1 class="page-title display-4">Qui sommes-nous ?</h1>
-            <p class="lead">Découvrez l'histoire, la mission et l'impact du FTSCD.</p>
-        </div>
-    </section>
+    <!-- Conteneur pour la barre de navigation --> 
+<div class="container">
+  <section id="apropos" class="section">
+    <h2>NOTRE HISTOIRE ET NOS VALEURS</h2>
+      <p>Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est une organisation regroupant plusieurs associations et ONG engagées dans le développement durable, 
+        la gouvernance démocratique et la participation citoyenne. Depuis sa création en 2003, il œuvre activement pour la promotion des droits humains, 
+        la transparence et la bonne gouvernance.
+      </p>
+   
+    <h3><strong>Création</strong></h3>
+      <p>
+        Fondé le 26 avril 2003 à Lomé, le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau structuré 
+        regroupant des Associations et Organisations Non Gouvernementales (ONG) engagées en faveur du développement durable et 
+        de la gouvernance citoyenne. Son siège national est situé à Agoè-Logopé, en face du Centre d’accueil des réfugiés à Lomé (Ancien camp de police). 
+        Le Forum dispose également d’une antenne régionale à Kara, dans le quartier Cofac, ainsi que de points focaux répartis 
+        sur l’ensemble du territoire national, assurant une couverture efficace et une proximité avec les communautés. 
+        Il est officiellement enregistré sous le N°1717/MIS, avec un récépissé d’agrément N°0942/DATDSG-DAPOC-DOCA.
+      </p>
 
-    <section id="apropos-contenu" class="section py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Présentation du FTSCD</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <p class="lead">Le Forum Togolais de la Société Civile pour le Développement (FTSCD) est un réseau d'associations et d'ONGs basé au Togo, créé le 26 avril 2003 à Lomé. Il regroupe un réseau d’associations et d’organisations non gouvernementales engagées dans la promotion du développement durable, de la gouvernance démocratique et de la participation citoyenne.</p>
-                    <p>Le FTSCD est enregistré sous le N°1717/MIS avec le récépissé N°0942/DATD/SG-DAPOC-DOCA.</p>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <img src="media/images/Activ1.png" alt="Photo de l'équipe FTSCD ou de ses activités" class="img-fluid rounded-lg shadow-sm">
-                </div>
-            </div>
+      <br><br>
+    
+    <h3><strong>Buts et Objectifs</strong></h3>
+      <p>
+        Le Forum Togolais de la Société Civile pour le Développement (FTSCD) a pour mission de contribuer activement au développement 
+        social, économique et culturel du Togo. Il s’engage à promouvoir le bien-être des populations en favorisant le respect des valeurs 
+        citoyennes et républicaines, la défense des droits de l’homme, ainsi que le renforcement de la démocratie et de la culture de la paix. 
+        Le Forum œuvre également pour l’instauration d’une gouvernance transparente et efficace, l’intégrité des processus électoraux, 
+        la décentralisation et la préservation de l’environnement, dans une approche inclusive et durable.
+      </p>
+    
+      <br><br>
 
-            <div class="row mt-5">
-                <div class="col-md-6 mb-4">
-                    <div class="card mission-vision-card shadow-sm border-0">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary-ftscd"><i class="fas fa-bullseye me-2"></i> Notre Vision</h3>
-                            <p class="card-text">Nous aspirons à un Togo où la démocratie est florissante, les droits de l’homme respectés et la bonne gouvernance érigée en principe fondamental pour un développement inclusif et durable.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card mission-vision-card shadow-sm border-0">
-                        <div class="card-body">
-                            <h3 class="card-title text-primary-ftscd"><i class="fas fa-rocket me-2"></i> Notre Mission</h3>
-                            <p class="card-text">Le FTSCD a pour mission de renforcer les capacités des organisations de la société civile, de plaider pour des réformes institutionnelles et de sensibiliser la population aux enjeux de la citoyenneté responsable, de la lutte contre la corruption et de la protection de l'environnement.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <h3>Notre Mission</h3>
+      <p>
+        Le FTSCD a pour mission de renforcer la société civile togolaise en favorisant l’engagement citoyen, la justice sociale et le respect des valeurs républicaines. 
+        Il vise à accompagner les initiatives locales pour une société plus équitable et participative.
+      </p>
+    
+    <h3>Nos Valeurs</h3>
+      <ul>
+        <li><strong>Engagement :</strong> Nous travaillons avec détermination pour défendre les causes citoyennes et démocratiques.</li>
+        <li><strong>Transparence :</strong> Nous prônons une gestion responsable et honnête des ressources et des projets.</li>
+        <li><strong>Solidarité :</strong> Nous encourageons la collaboration et le partage des connaissances entre acteurs du développement.</li>
+        <li><strong>Innovation :</strong> Nous adoptons des approches modernes et inclusives pour maximiser notre impact.</li>
+      </ul>
+    
+    <h3>Notre Impact</h3>
+      <p>Depuis sa création, le FTSCD a réalisé de nombreuses initiatives pour renforcer la démocratie et la gouvernance au Togo. Nos actions ont permis de :</p>
+      <ul>
+        <li>Former des centaines d’acteurs de la société civile et des jeunes leaders.</li>
+        <li>Organiser des campagnes de sensibilisation sur les droits de l’homme et la citoyenneté.</li>
+        <li>Mettre en place des plateformes de dialogue et d’échange entre citoyens et décideurs.</li>
+        <li>Promouvoir la décentralisation et l’implication des communautés locales dans la gestion des affaires publiques.</li>
+      </ul>
+  </section>
+</div>
 
             <h2 class="section-title text-center my-5" id="valeurs">Nos Valeurs Fondamentales</h2>
             <div class="row">
