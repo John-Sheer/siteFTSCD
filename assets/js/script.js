@@ -221,7 +221,7 @@ function initLeafletMap() {
 
         // 5. Ajouter un marqueur
         L.marker([LAT, LNG]).addTo(map)
-            .bindPopup('<b>FTSCD</b><br>Notre Emplacement.')
+            .bindPopup('<b>FTSCD</b><br>Notre siège à lomé.')
             .openPopup();
             
         // Supprimer le texte de placeholder
@@ -291,3 +291,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+
+/**
+ * Fonction pour charger et insérer un fichier HTML externe dans un élément cible.
+ * (Fonction identique à la précédente)
+ */
+function loadHTMLContent(url, elementId) {
+    const targetElement = document.getElementById(elementId);
+    
+    if (!targetElement) {
+        console.error(`Erreur: L'élément avec l'ID "${elementId}" est introuvable.`);
+        return;
+    }
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erreur de chargement: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            targetElement.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Erreur lors de l\'intégration du contenu:', error);
+        });
+}
+
+// ----------------------------------------------------------------------
+// MODIFICATION CLÉ : Charger le contenu de la barre de recherche (votre nouveau fichier)
+// dans le placeholder existant. 
+// ----------------------------------------------------------------------
+loadHTMLContent('includes/search-bar.html', 'search-bar-placeholder'); 
+// OU, si vous avez renommé le fichier :
+// loadHTMLContent('includes/search-bar.html', 'btnrec-placeholder');

@@ -60,9 +60,9 @@ h1, h2, h3, h4 {
 
 
 /*
-=====================================
-  Header et Navigation (MODIFIÉ POUR L'ALIGNEMENT)
-=====================================
+=======================
+ Header et Navigation
+=======================
 */
 .main-header {
     background-color: #fff;
@@ -79,12 +79,15 @@ h1, h2, h3, h4 {
     z-index: 1030;
 }
 
-.logo a img {
-    height: 50px;
+.logo {
+    /* Supprime la marge à droite du logo pour le coller à la barre de recherche */
+    margin-right: 0; 
+    flex-shrink: 0;
 }
 
-.main-header.sticky-top {
-    /* Styles pour la barre de navigation fixe, déjà géré par Bootstrap sticky-top */
+.logo a img {
+    height: 50px;
+    
 }
 
 /* Styles par défaut de la nav (sera écrasé par la media query desktop) */
@@ -100,7 +103,7 @@ h1, h2, h3, h4 {
     padding: 15px 18px;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     transition: color 0.3s ease;
     border-bottom: 3px solid transparent; /* Pour l'effet de survol/actif */
 }
@@ -268,8 +271,8 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary-ftscd:hover {
-    background-color: #006096;
-    border-color: #006096;
+    background-color: rgba(0, 74, 119, 0.2); 
+    border-color: rgba(0, 74, 119, 0.2); 
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 74, 119, 0.3);
 }
@@ -543,4 +546,79 @@ h1, h2, h3, h4 {
         opacity: 1;
         visibility: visible;
     }
+}
+
+
+/* ====================================== 
+STYLE DE LA BARRE DE RECHERCHE AJUSTÉE 
+====================================== 
+*/
+
+/* Conteneur principal: la "carte" 
+.Card {*/
+    /* Largeur réduite (Longueur)
+    max-width: 300px; 
+    margin: 20px auto; 
+    padding: 5px; 
+    background-color: #ffffff; 
+    border-radius: 20px; 
+    border: 1px solid #32a02e; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05); 
+} */
+
+/* 
+=================== 
+ BARRE DE RECHERCHE  
+=================== 
+*/
+
+.Card {
+    max-width: 180px;
+    margin: 0 20px 0 3px; 
+    padding: 3px 10px; 
+    background-color: #f7f7f7; 
+    border-radius: 50px; 
+    /* border: 1px solid rgba(50, 160, 46, 0.3);*/ 
+    box-shadow: none; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.Icon {
+    flex-shrink: 0;
+    margin-right: 8px; 
+    padding-left: 0; 
+    display: flex;
+    align-items: center;
+}
+
+.CardInner .container {
+    display: flex;
+    align-items: center;
+}
+
+#champ-recherche {
+    width: 100%;
+    height: 25px; 
+    padding: 3px 0; 
+    font-size: 0.9rem; 
+    color: #ffffff;   
+    border: none; 
+    background: transparent; 
+    outline: none; 
+    min-width: 0; 
+}
+
+#champ-recherche::placeholder {
+    color: #b0b0b0; 
+}
+
+/* Effet FOCUS stylé */
+.Card:focus-within {
+    /* Bordure et ombre accentuées */
+    border-color: #32a02e; 
+    box-shadow: 0 4px 15px rgba(50, 160, 46, 0.45); 
+    
+    /* Changement de fond et léger soulèvement */
+    transform: translateY(-2px); 
+    background-color: #ffffff; 
 }
