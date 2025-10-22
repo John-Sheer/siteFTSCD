@@ -155,6 +155,11 @@ h1, h2, h3, h4 {
     color: var(--color-primary);
 }
 
+/* Cachez le bouton hamburger par défaut (pour les grands écrans/PC) */
+.menu-toggle {
+    display: none; 
+}
+
 
 /*
 =====================================
@@ -186,8 +191,17 @@ h1, h2, h3, h4 {
 
 /* Mobile Styles (< 992px) */
 @media (max-width: 991.98px) {
-    /* Le logo et le toggle sont alignés grâce à display: flex sur .main-header */
+    .menu-toggle {
+        display: block; 
+        position: relative; 
+        z-index: 1000;
+    }
     
+    /* Optionnel : Masquez la barre de navigation principale si elle est visible */
+    #navbar-placeholder {
+        display: none;
+    }
+}
     .main-nav {
         /* Masque le menu par défaut pour le mobile (sera affiché par JavaScript) */
         display: none; 
@@ -249,7 +263,7 @@ h1, h2, h3, h4 {
     .dropdown:hover .submenu {
         display: block; /* La logique d'ouverture restera gérée par le JS pour la classe 'active' */
     }
-}
+
 
 
 /*
@@ -535,7 +549,7 @@ h1, h2, h3, h4 {
 /* Affichage du menu principal en mobile lorsque JS ajoute la classe 'menu-open' */
 @media (max-width: 991.98px) {
     .main-nav.menu-open {
-        display: block; 
+        display: block !important;
     }
     
     /* Affichage du sous-menu en mobile lorsque JS ajoute la classe 'active' au parent */
