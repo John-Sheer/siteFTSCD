@@ -191,17 +191,8 @@ h1, h2, h3, h4 {
 
 /* Mobile Styles (< 992px) */
 @media (max-width: 991.98px) {
-    .menu-toggle {
-        display: block; 
-        position: relative; 
-        z-index: 1000;
-    }
+    /* Le logo et le toggle sont alignés grâce à display: flex sur .main-header */
     
-    /* Optionnel : Masquez la barre de navigation principale si elle est visible */
-    #navbar-placeholder {
-        display: none;
-    }
-}
     .main-nav {
         /* Masque le menu par défaut pour le mobile (sera affiché par JavaScript) */
         display: none; 
@@ -263,7 +254,7 @@ h1, h2, h3, h4 {
     .dropdown:hover .submenu {
         display: block; /* La logique d'ouverture restera gérée par le JS pour la classe 'active' */
     }
-
+}
 
 
 /*
@@ -549,7 +540,7 @@ h1, h2, h3, h4 {
 /* Affichage du menu principal en mobile lorsque JS ajoute la classe 'menu-open' */
 @media (max-width: 991.98px) {
     .main-nav.menu-open {
-        display: block !important;
+        display: block; 
     }
     
     /* Affichage du sous-menu en mobile lorsque JS ajoute la classe 'active' au parent */
